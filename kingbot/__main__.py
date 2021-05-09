@@ -24,7 +24,7 @@ HNDLR="."
 async def get_runtime():
     return BOT_RUNTIME
 
-@kingbot.on_message(filters.command(start,HNDLR) & filters.user(AdminSettings))
+@kingbot.on_message(filters.command("help",HNDLR) & filters.user(AdminSettings))
 async def h_lp(_ , message):
   BotUN= setbot.get_me().username
   res= kingbot.get_inline_bot_results(BotUN, "hlpin")
