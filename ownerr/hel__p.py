@@ -8,11 +8,10 @@ from kingbot.__main__ import HELP_COMMANDS
 
 HNDLR="."
 AdminSettings= [1359459092]
-Bot= setbot.get_me()
-BotUN= Bot.username
+
 @kingbot.on_message(filters.command("help",HNDLR) & filters.user(AdminSettings))
 async def h_lp(_ , message):
-  res= kingbot.get_inline_bot_results(BotUN, "hlpin")
+  res= kingbot.get_inline_bot_results("Devilkalund2bot", "hlpin")
   await kingbot.send_inline_bot_result(message.chat.id, res.query_id, res.results[0].id)
 
 @setbot.on_inline_query(filters.regex("hlpin"))
