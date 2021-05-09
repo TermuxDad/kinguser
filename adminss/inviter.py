@@ -26,4 +26,4 @@ async def invite_link(client, message):
                 print(e)
                 await message.reply_text(message.chat.id ,"denied permission"
     else:
-        await message.delete()
+          await message.delete()
