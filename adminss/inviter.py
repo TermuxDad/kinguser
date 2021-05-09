@@ -17,11 +17,9 @@ AdminSettings= [1359459092]
 async def invite_link(client, message):
     if message.chat.type in ["group", "supergroup"]:
         chat_name = message.chat.title
-        can_invite = await admin_check(message)
-        if can_invite:
-            try:
+        try:
                 link = await kingbot.export_chat_invite_link(message.chat.id)
                 await message.reply_text(message.chat.id , f"The invite link for chat is {link}")
-            except Exception as e:
+        except Exception as e:
                 print(e)
                 await message.reply_text(message.chat.id ,"denied permission")
