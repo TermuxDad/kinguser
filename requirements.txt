@@ -1,0 +1,6 @@
+pyrogram
+python-dotenv
+tgcrypto
+telegraph
+python-decouple
+pytgcalls
