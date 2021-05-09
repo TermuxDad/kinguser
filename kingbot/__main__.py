@@ -183,8 +183,8 @@ async def start_bot():
                 raise Exception("Can't have two modules with the same name! Please change one")
         if hasattr(imported_module, "__HELP__") and imported_module.__HELP__:
             HELP_COMMANDO[imported_module.__MODULE__.lower()] = imported_module
-    for modula in ALL_AST:
-            imported_module = importlib.import_module("assistant." + modul)
+    for moduli in ALL_AST:
+            imported_module = importlib.import_module("assistant." + moduli)
             if hasattr(imported_module, "__MODULE__") and imported_module.__MODULE__:
                 imported_module.__MODULE__ = imported_module.__MODULE__
             if hasattr(imported_module, "__MODULE__") and imported_module.__MODULE__:
