@@ -1,7 +1,13 @@
 
+from pyrogram import idle
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton , InlineQuery ,Message, CallbackQuery, InlineQueryResultPhoto
+from pyrogram import filters 
+# import kingbot
+from kingbot import kingbot ,setbot
+from kingbot.__main__ import HELP_COMMANDS
 
-
-
+HNDLR="."
+AdminSettings= [1359459092]
 
 
 @kingbot.on_message(filters.command("help",HNDLR) & filters.user(AdminSettings))
