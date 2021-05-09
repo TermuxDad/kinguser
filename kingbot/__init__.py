@@ -57,6 +57,7 @@ async def get_bot_inline(bot):
 
 async def get_self():
     global Owner, OwnerName, OwnerUsername, AdminSettings
+    AdminSettings=[]
     getself = await kingbot.get_me()
     Owner = getself.id
     if getself.last_name:
