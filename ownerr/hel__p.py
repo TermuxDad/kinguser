@@ -17,7 +17,7 @@ async def h_lp(_ , message):
 @setbot.on_inline_query(filters.regex("hlpin"))
 async def in_h_lp(_ , inlinequery):
   keboard= InlineKeyboardMarkup(
-                    [
+                  [  [
                         InlineKeyboardButton(
                             "Group Admin Plugins",
                             callback_data= "_admin_h"
@@ -43,7 +43,7 @@ async def in_h_lp(_ , inlinequery):
                         InlineKeyboardButton(
                             "Close the menu",
                             callback_data= "kloz"
-                  )])
+                  )]])
   inline_query.answer(
         results=[
             InlineQueryResultPhoto(
