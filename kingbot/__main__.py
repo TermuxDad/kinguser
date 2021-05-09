@@ -304,7 +304,7 @@ async def reboot():
         if hasattr(imported_module, "__HELP__") and imported_module.__HELP__:
             HELP_COMMANDO[imported_module.__MODULE__.lower()] = imported_module
         importlib.reload(imported_module)
-     for modula in ALL_AST:
+    for modula in ALL_AST:
             imported_module = importlib.import_module("assistant." + modul)
             if hasattr(imported_module, "__MODULE__") and imported_module.__MODULE__:
                 imported_module.__MODULE__ = imported_module.__MODULE__
