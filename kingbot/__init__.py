@@ -23,16 +23,16 @@ try:
         HNDLR = Var.HANDELR
     else:
         HNDLR = "."
-    if not Var.SUDO
+    if not Var.SUDO:
         SUDO = None
-    else
+    else:
         SUDO =Var.Sudo
 except BaseException:
     pass
 
 
 
-if Var.VC_SESSION
+if Var.VC_SESSION:
     try:
         client = Client(Var.VC_SESSSION, Var.VC_API_ID, Var.VC_API_HASH)
         vcbot = PyTgCalls(client)
