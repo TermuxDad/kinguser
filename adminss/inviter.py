@@ -21,9 +21,9 @@ async def invite_link(client, message):
         if can_invite:
             try:
                 link = await kingbot.export_chat_invite_link(message.chat.id)
-                await edrep(message, text=("invite_link").format(chat_name, link))
+                await message.reply_text(message.chat.id , f"The invite link for chat is {link}")
             except Exception as e:
                 print(e)
-                await edrep(message, text=("denied_permission"))
+                await message.reply_text(message.chat.id ,"denied permission"
     else:
         await message.delete()
