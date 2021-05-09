@@ -11,7 +11,7 @@ AdminSettings= [1359459092]
 
 @kingbot.on_message(filters.command("help",HNDLR) & filters.user(AdminSettings))
 async def h_lp(_ , message):
-  res= kingbot.get_inline_bot_results("Devilkalund2bot", "hlpin")
+  res=await kingbot.get_inline_bot_results("Devilkalund2bot", "hlpin")
   await kingbot.send_inline_bot_result(message.chat.id, res.query_id, res.results[0].id)
 
 @setbot.on_inline_query(filters.regex("hlpin"))
