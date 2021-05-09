@@ -190,8 +190,8 @@ async def start_bot():
                 HELP_COMMANDAST[imported_module.__MODULE__.lower()] = imported_module
             await idle()
     HELP_COMMANDS = {**HELP_COMMANDA,**HELP_COMMANDU,**HELP_COMMANDO, **HELP_COMMANDAST}
-AdminSettings= get_self().AdminSettings
-Owner= get_self().Owner
+AdminSettings=await get_self().AdminSettings
+Owner= await get_self().Owner
 if __name__ == '__main__':
     BOT_RUNTIME = int(time.time())
     loop.run_until_complete(start_bot())
