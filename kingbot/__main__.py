@@ -9,7 +9,7 @@ from pyrogram import idle
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton , InlineQuery ,Message, CallbackQuery, InlineQueryResultPhoto
 from pyrogram import filters 
 # import kingbot
-# from kingbot import Owner , setbot , get_bot , get_self , HNDLR , BotUN
+from kingbot import Owner , setbot , get_bot , get_self , HNDLR , BotUN
 from assistant import ALL_AST
 from adminss import ALL_ADMINN
 from utilss import ALL_UTILS
@@ -303,7 +303,7 @@ async def reboot():
         if hasattr(imported_module, "__HELP__") and imported_module.__HELP__:
             HELP_COMMANDO[imported_module.__MODULE__.lower()] = imported_module
         importlib.reload(imported_module)
-        for modula in ALL_AST:
+     for modula in ALL_AST:
             imported_module = importlib.import_module("assistant." + modul)
             if hasattr(imported_module, "__MODULE__") and imported_module.__MODULE__:
                 imported_module.__MODULE__ = imported_module.__MODULE__
@@ -388,7 +388,7 @@ async def start_bot():
                 raise Exception("Can't have two modules with the same name! Please change one")
         if hasattr(imported_module, "__HELP__") and imported_module.__HELP__:
             HELP_COMMANDO[imported_module.__MODULE__.lower()] = imported_module
-        for modula in ALL_AST:
+    for modula in ALL_AST:
             imported_module = importlib.import_module("assistant." + modul)
             if hasattr(imported_module, "__MODULE__") and imported_module.__MODULE__:
                 imported_module.__MODULE__ = imported_module.__MODULE__
