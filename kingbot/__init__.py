@@ -85,7 +85,7 @@ async def get_bot():
     BotID = getbot.id
     BotName = getbot.first_name
     BotUsername = getbot.username
-BotUN= BotUsername
+BotUN= get_bot().BotUsername
 
 BASE = declarative_base()
 SESSION = mulaisql()
