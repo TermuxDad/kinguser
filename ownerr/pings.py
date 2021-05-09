@@ -8,7 +8,7 @@ __**This command helps you to instantly get the ping of the userbot**__
 ──「 **Usage** 」──
 -> `ping`
 """
-@kingbot.on_message(filters.command(start,HNDLR) & filters.user(AdminSettings))
+@kingbot.on_message(filters.command("ping",HNDLR) & filters.user(AdminSettings))
 async def pinger(_, message):
     start = time.now()
     await message.edit('`Pong!`')
