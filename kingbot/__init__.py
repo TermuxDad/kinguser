@@ -78,7 +78,6 @@ async def get_bot():
 
 
 BASE = declarative_base()
-SESSION = mulaisql()
 setbot = Client(":memory:",api_id=Var.API_ID, api_hash=Var.API_HASH, bot_token=Var.BOT_TOKEN )
 kingbot = Client(Var.SESSION, api_id=Var.API_ID, api_hash=Var.API_HASH)
 async def edrep(msg: Message, **kwargs):
