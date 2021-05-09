@@ -1,7 +1,6 @@
 from pyrogram import client, filters
 import asyncio
 import time
-from emoji import get_emoji_regexp
 from kingbot import edrep, kingbot
 
 __MODULE__ = "chat link"
