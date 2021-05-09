@@ -9,7 +9,7 @@ from pyrogram import idle
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton , InlineQuery ,Message, CallbackQuery, InlineQueryResultPhoto
 from pyrogram import filters 
 # import kingbot
-from kingbot import Owner , setbot , get_bot , get_self , HNDLR , BotUN
+from kingbot import setbot , get_bot , get_self , HNDLR , BotUN
 from assistant import ALL_AST
 from adminss import ALL_ADMINN
 from utilss import ALL_UTILS
@@ -402,7 +402,7 @@ async def start_bot():
                 HELP_COMMANDAST[imported_module.__MODULE__.lower()] = imported_module
             await idle()
 
-
+Owner= getself().Owner
 if __name__ == '__main__':
     BOT_RUNTIME = int(time.time())
     loop.run_until_complete(start_bot())
