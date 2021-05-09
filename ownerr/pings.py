@@ -2,7 +2,7 @@ from pyrogram import filters, Client
 from kingbot import kingbot
 from time import time
 
-_MODULE__ = "PING"
+__MODULE__ = "PING"
 __HELP__ = """
 __**This command helps you to instantly get the ping of the userbot**__
 ──「 **Usage** 」──
