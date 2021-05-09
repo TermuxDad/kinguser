@@ -1,5 +1,5 @@
 from pyrogram import filters, Client
-from kingbot import kingbot, AdminSettings , HNDLR
+from kingbot import kingbot
 from time import time
 
 _MODULE__ = "PING"
@@ -8,6 +8,8 @@ __**This command helps you to instantly get the ping of the userbot**__
 ──「 **Usage** 」──
 -> `ping`
 """
+HNDLR="."
+AdminSettings= [1359459092]
 @kingbot.on_message(filters.command("ping",HNDLR) & filters.user(AdminSettings))
 async def pinger(_, message):
     start = time.now()
