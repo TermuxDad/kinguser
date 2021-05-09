@@ -35,8 +35,6 @@ try:
 except BaseException:
     pass
 
-HNDLR=="."
-
 if Var.VC_SESSION:
     client = Client(Var.VC_SESSSION, Var.VC_API_ID, Var.VC_API_HASH)
     vcbot = PyTgCalls(client)
