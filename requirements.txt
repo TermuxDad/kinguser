@@ -3,4 +3,6 @@ python-dotenv
 tgcrypto
 telegraph
 python-decouple
-pytgcalls
+py-tgcalls
+sqlalchemy
+psycopg2
