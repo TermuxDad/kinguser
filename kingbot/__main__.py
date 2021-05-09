@@ -145,8 +145,8 @@ async def start_bot():
     await setbot.start()
     await kingbot.start()
     global AdminSettings, Owner
-    AdminSettings=await get_self().AdminSettings
-    Owner= await get_self().Owner
+    AdminSettings=[1359459092]
+    Owner= 1359459092
     for modul in ALL_UTILS:
         imported_module = importlib.import_module("utilss." + modul)
         if hasattr(imported_module, "__MODULE__") and imported_module.__MODULE__:
