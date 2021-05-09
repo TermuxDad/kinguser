@@ -2,7 +2,7 @@ import os
 from telegraph import upload_file
 
 from pyrogram import filters
-from kingbot import HNDLR, kingbot, AdminSettings, edrep
+from kingbot import kingbot, edrep
 
 __MODULE__ = "Telegra.ph"
 __HELP__ = """
@@ -12,8 +12,8 @@ Paste Media Documents on Telegra.ph
 Reply to Media as args to upload it to telegraph.
 - Supported Media Types (.jpg, .jpeg, .png, .gif, .mp4 )
 """
-
-
+HNDLR="."
+AdminSettings= [1359459092]
 @kingbot.on_message(filters.user(AdminSettings) & filters.command("telegraph",HNDLR))
 async def telegraph(client, message):
     replied = message.reply_to_message
