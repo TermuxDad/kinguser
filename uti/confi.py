@@ -27,13 +27,13 @@ class Var(object):
         HEROKU_API = None
     
     try:
-        VC_SESSSION = config("VC_SESSSION", default=None)
+        VC_SESSION = config("VC_SESSSION", default=None)
         VC_API_ID = config("VC_API_ID", default=None)
         VC_API_HASH = config("VC_API_HASH", default=None)
         HANDLER = config("COMMAND_HANDLER", default=None)
         SUDO = set(int(x) for x in config("SUDO_USERS", "").split())
     except BaseException:
-        VC_SESSSION= None
+        VC_SESSION= None
         VC_API_ID = None
         VC_API_HASH= None
         HANDLER= None
