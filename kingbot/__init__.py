@@ -6,6 +6,10 @@ from logging import DEBUG, INFO, basicConfig, getLogger
 from logging import warning as wr
 from pyrogram import Client
 from decouple import config
+from sqlalchemy import create_engine, exc
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker, scoped_session
+
 from uti.confi import Var
 LOGS = getLogger(__name__)
 
