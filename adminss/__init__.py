@@ -22,5 +22,5 @@ def get_all_plugins() -> List[str]:
 
 __all__ = ['ROOT', 'get_all_plugins']
 ALL_ADMINN= sorted(__list_all_modules())
-log.info("Userbot module loaded: %s", str(ALL_ADMINN))
+#log.info("Userbot module loaded: %s", str(ALL_ADMINN))
 __all__ = ALL_ADMINN + ["ALL_ADMINN"]
