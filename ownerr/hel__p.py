@@ -18,32 +18,32 @@ async def h_lp(_ , message):
 async def in_h_lp(_ , inlinequery):
   keboard= InlineKeyboardMarkup(
                     [
-                        [InlineKeyboardButton(
+                        InlineKeyboardButton(
                             "Group Admin Plugins",
                             callback_data= "_admin_h"
-                        )]
+                        )
                     ],
                     [
-                        [InlineKeyboardButton(
+                        InlineKeyboardButton(
                             "Util Plugins",
                             callback_data= "_util_h"
-                        )],
-                        [InlineKeyboardButton(
+                        ),
+                        InlineKeyboardButton(
                             "ASSISTANT Plugins",
                             callback_data= "_ast_h"
-                        )]
+                        )
                     ],
                     [
-                        [InlineKeyboardButton(
+                        InlineKeyboardButton(
                             "OWNER Plugins",
                             callback_data= "_own_h"
-                        )]
+                        )
                     ],
                     [
-                        [InlineKeyboardButton(
+                        InlineKeyboardButton(
                             "Close the menu",
                             callback_data= "kloz"
-                  )]])
+                  )])
   inline_query.answer(
         results=[
             InlineQueryResultPhoto(
