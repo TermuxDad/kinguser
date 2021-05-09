@@ -144,6 +144,8 @@ async def start_bot():
     # Assistant bot
     await setbot.start()
     await kingbot.start()
+    global AdminSettings=await get_self().AdminSettings
+    global Owner= await get_self().Owner
     for modul in ALL_UTILS:
         imported_module = importlib.import_module("utilss." + modul)
         if hasattr(imported_module, "__MODULE__") and imported_module.__MODULE__:
@@ -190,8 +192,6 @@ async def start_bot():
                 HELP_COMMANDAST[imported_module.__MODULE__.lower()] = imported_module
             await idle()
     HELP_COMMANDS = {**HELP_COMMANDA,**HELP_COMMANDU,**HELP_COMMANDO, **HELP_COMMANDAST}
-AdminSettings=await get_self().AdminSettings
-Owner= await get_self().Owner
 if __name__ == '__main__':
     BOT_RUNTIME = int(time.time())
     loop.run_until_complete(start_bot())
