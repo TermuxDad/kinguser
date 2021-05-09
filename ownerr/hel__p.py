@@ -15,7 +15,7 @@ async def h_lp(_ , message):
   await kingbot.send_inline_bot_result(message.chat.id, res.query_id, res.results[0].id)
 
 @setbot.on_inline_query(filters.regex("hlpin"))
-async def in_h_lp(_ , inlinequery):
+async def in_h_lp(_ , inline_query):
   keboard= InlineKeyboardMarkup(
                   [  [
                         InlineKeyboardButton(
