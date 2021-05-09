@@ -11,8 +11,6 @@ def __list_all_modules():
     all_modules = [basename(f)[:-3] for f in mod_paths if isfile(f)
                    and f.endswith(".py")
                    and not f.endswith('__init__.py') 
-    to_load = all_modules
-    return to_load
     return all_modules
 def get_all_plugins() -> List[str]:
     """ list all plugins """
