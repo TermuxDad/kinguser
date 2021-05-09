@@ -14,7 +14,7 @@ Reply to Media as args to upload it to telegraph.
 """
 
 
-@kingbot.on_message(filters.user(AdminSettings) & filters.command(start,HNDLR))
+@kingbot.on_message(filters.user(AdminSettings) & filters.command("telegraph",HNDLR))
 async def telegraph(client, message):
     replied = message.reply_to_message
     if not replied:
