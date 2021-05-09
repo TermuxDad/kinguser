@@ -9,7 +9,7 @@ from pyrogram import idle
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton , InlineQuery ,Message, CallbackQuery, InlineQueryResultPhoto
 from pyrogram import filters 
 # import kingbot
-from kingbot import setbot , get_bot , get_self 
+from kingbot import kingbot ,setbot , get_bot , get_self 
 from assistant import ALL_AST
 from adminss import ALL_ADMINN
 from utilss import ALL_UTILS
