@@ -13,7 +13,7 @@ __**This command helps you to instantly get the invite link of the chat**__
 
 
 
-@kingbot.on_message(filters.command(start,HNDLR) & filters.user(AdminSettings))
+@kingbot.on_message(filters.command("invitelink",HNDLR) & filters.user(AdminSettings))
 async def invite_link(client, message):
     if message.chat.type in ["group", "supergroup"]:
         chat_name = message.chat.title
