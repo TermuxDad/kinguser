@@ -87,7 +87,7 @@ BotUN= BotUsername
 BASE = declarative_base()
 SESSION = mulaisql()
 setbot = Client(":memory:",api_id=Var.API_ID, api_hash=Var.API_HASH, bot_token=Var.BOT_TOKEN )
-naruto = Client(Var.SESSION, api_id=Var.API_ID, api_hash=Var.API_HASH)
+kingbot = Client(Var.SESSION, api_id=Var.API_ID, api_hash=Var.API_HASH)
 async def edrep(msg: Message, **kwargs):
     func = msg.edit_text if msg.from_user.is_self else msg.reply
     spec = getfullargspec(func.__wrapped__).args
