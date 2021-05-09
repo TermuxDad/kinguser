@@ -44,7 +44,7 @@ async def in_h_lp(_ , inline_query):
                             "Close the menu",
                             callback_data= "kloz"
                   )]])
-  inline_query.answer(
+  await inline_query.answer(
         results=[
             InlineQueryResultPhoto(
                 photo_url= "https://telegra.ph/file/7b7141557ddf084e0afe6.jpg",
