@@ -18,7 +18,7 @@ AdminSettings= [1359459092]
 async def telegraph(client, message):
     replied = message.reply_to_message
     if not replied:
-        await message.reply_text(message.chat.id, "reply to a supported media file")
+        await message.reply_text("reply to a supported media file")
         return
     if not (
         (replied.photo and replied.photo.file_size <= 5242880)
@@ -36,7 +36,7 @@ async def telegraph(client, message):
             and replied.document.file_size <= 5242880
         )
     ):
-        await message.reply_text(message.chat.id, "not supported!")
+        await message.reply_text("not supported!")
         return
     download_location = await client.download_media(
         message=message.reply_to_message, file_name="root/nana/"
@@ -47,7 +47,6 @@ async def telegraph(client, message):
         await kingbot.send_message(message.chat.id, document)
     else:
         await message.reply_text(
-            message.chat.id,
             f"**Document passed to: [Telegra.ph](https://telegra.ph{response[0]})**",
         )
     finally:
