@@ -402,7 +402,7 @@ async def start_bot():
                 HELP_COMMANDAST[imported_module.__MODULE__.lower()] = imported_module
             await idle()
 
-Owner= getself().Owner
+Owner= get_self().Owner
 if __name__ == '__main__':
     BOT_RUNTIME = int(time.time())
     loop.run_until_complete(start_bot())
