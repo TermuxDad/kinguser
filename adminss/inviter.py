@@ -24,5 +24,4 @@ async def invite_link(client, message):
                 await message.reply_text(message.chat.id , f"The invite link for chat is {link}")
             except Exception as e:
                 print(e)
-                await message.reply_text(message.chat.id ,"denied permission"
-    
+                await message.reply_text(message.chat.id ,"denied permission")
