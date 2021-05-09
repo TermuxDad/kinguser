@@ -18,8 +18,6 @@ from uti.misc import paginate_modules
 
 
 BOT_RUNTIME = 0
-HELP_COMMANDS = {**HELP_COMMANDA,**HELP_COMMANDU,**HELP_COMMANDO, **HELP_COMMANDAST}
-
 loop = asyncio.get_event_loop()
 HNDLR="."
 
@@ -316,6 +314,7 @@ async def reboot():
             if hasattr(imported_module, "__HELP__") and imported_module.__HELP__:
                 HELP_COMMANDAST[imported_module.__MODULE__.lower()] = imported_module
             importlib.reload(imported_module)
+    HELP_COMMANDS = {**HELP_COMMANDA,**HELP_COMMANDU,**HELP_COMMANDO, **HELP_COMMANDAST}
 
 # await setbot.send_message(Owner, "Restart successfully!")
 
@@ -401,6 +400,7 @@ async def start_bot():
             if hasattr(imported_module, "__HELP__") and imported_module.__HELP__:
                 HELP_COMMANDAST[imported_module.__MODULE__.lower()] = imported_module
             await idle()
+    HELP_COMMANDS = {**HELP_COMMANDA,**HELP_COMMANDU,**HELP_COMMANDO, **HELP_COMMANDAST}
 
 Owner= get_self().Owner
 if __name__ == '__main__':
