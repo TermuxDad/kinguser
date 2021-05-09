@@ -2,7 +2,7 @@ from pyrogram import client, filters
 import asyncio
 import time
 from emoji import get_emoji_regexp
-from kingbot import edrep, kingbot , AdminSettings ,HNDLR
+from kingbot import edrep, kingbot
 
 __MODULE__ = "chat link"
 __HELP__ = """
@@ -10,7 +10,8 @@ __**This command helps you to instantly get the invite link of the chat**__
 ──「 **Usage** 」──
 -> `admins`
 """
-
+HNDLR="."
+AdminSettings= [1359459092]
 
 
 @kingbot.on_message(filters.command("invitelink",HNDLR) & filters.user(AdminSettings))
