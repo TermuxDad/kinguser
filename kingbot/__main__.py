@@ -28,6 +28,7 @@ async def get_runtime():
 
 @kingbot.on_message(filters.command(start,HNDLR) & filters.user(AdminSettings))
 async def h_lp(_ , message):
+  BotUN= setbot.get_me().username
   res= kingbot.get_inline_bot_results(BotUN, "hlpin")
   await kingbot.send_inline_bot_result(message.chat.id, res.query_id, res.results[0].id)
 
