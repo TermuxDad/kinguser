@@ -6,3 +6,4 @@ python-decouple
 py-tgcalls
 sqlalchemy
 psycopg2
+redis
