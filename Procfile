@@ -1,0 +1,9 @@
+build:
+  docker:
+      worker: Dockerfile
+      web: Dockerfile
+run:
+  worker: bash resources/startup/startup.sh
+  web: python vcstarter.py
+
+  
