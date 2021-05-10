@@ -23,20 +23,39 @@ if not Var.API_ID or not Var.API_HASH:
 
 START_TIME = datetime.now()
 
+
 try:
-    if Var.HANDELR:
-        HNDLR = Var.HANDELR
+    redis_info = Var.REDIS_URI.split(":")
+    vr = StrictRedis(
+        host=redis_info[0],
+        port=redis_info[1],
+        password=Var.REDIS_PASSWORD,
+        charset="utf-8",
+        decode_responses=True,
+    )
+except ConnectionError as ce:
+    wr(f"ERROR - {ce}")
+    exit(1)
+except ResponseError as res:
+    wr(f"ERROR - {res}")
+    exit(1)
+
+try:
+    if vr.get("HNDLR"):
+        HNDLR = vr.get("HNDLR")
     else:
-        HNDLR = "."
-    if not Var.SUDO:
-        SUDO = None
-    else:
-        SUDO =Var.Sudo
+        vr.set("HNDLR", ".")
+        HNDLR = vr.get("HNDLR")
+    if not udB.get("SUDO"):
+        vr.set("SUDO", "False")
 except BaseException:
     pass
 
-if Var.VC_SESSION:
-    client = Client(Var.VC_SESSSION, Var.VC_API_ID, Var.VC_API_HASH)
+if vr.get("SUDOS") is None:
+    vr.set("SUDOS", "1")
+
+if vr.get("VC_SESSION"):
+    client = Client(vr.get("VC_SESSSION"), vr.("VC_API_ID"), vr.("VC_API_HASH"))
     vcbot = PyTgCalls(client)
 else:
     vcbot = None
