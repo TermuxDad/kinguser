@@ -1,9 +1,5 @@
 build:
   docker:
-      worker: Dockerfile
-      web: Dockerfile
+    worker: Dockerfile
 run:
-  worker: bash resources/startup/startup.sh
-  web: python vcstarter.py
-
-  
+  worker: python3 -m kingbot
