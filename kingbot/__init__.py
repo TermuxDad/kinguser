@@ -10,7 +10,7 @@ from decouple import config
 from sqlalchemy import create_engine, exc
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, scoped_session
-
+from redis import ConnectionError, ResponseError, StrictRedis
 from uti.confi import Var
 LOGS = getLogger(__name__)
 
