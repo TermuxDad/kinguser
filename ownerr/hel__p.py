@@ -83,7 +83,6 @@ async def cbire(_ , cbq: CallbackQuery):
                             "Back",
                             callback_data= "b_k"
              )],
-             [
                [InlineKeyboardButton(
                             "Close",
                             callback_data= "kloz"
@@ -99,13 +98,13 @@ async def cbire(_ , cbq: CallbackQuery):
                [InlineKeyboardButton(
                             "Back",
                             callback_data= "b_k"
-             )]],
+             )],
              [
                [InlineKeyboardButton(
                             "Close",
                             callback_data= "kloz"
-             )]],
-        )
+             )],
+        ])
       cbq.edit_message_caption(
                             caption="This is the help for util commmands to make your life easy peasy",
                             reply_markup = keyboard)
@@ -116,13 +115,13 @@ async def cbire(_ , cbq: CallbackQuery):
                [InlineKeyboardButton(
                             "Back",
                             callback_data= "b_k"
-             )]],
+             )],
              [
                [InlineKeyboardButton(
                             "Close",
                             callback_data= "kloz"
-             )]],
-        )
+             )],
+        ])
       cbq.edit_message_caption(
                             caption="This is the help for assistant commmands to manage your userbot",
                             reply_markup = keyboard)
