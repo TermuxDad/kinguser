@@ -25,16 +25,5 @@ class Var(object):
     except BaseException:
         HEROKU_APP_NAME = None
         HEROKU_API = None
-    
-    try:
-        VC_SESSION = config("VC_SESSSION", default=None)
-        VC_API_ID = config("VC_API_ID", default=None)
-        VC_API_HASH = config("VC_API_HASH", default=None)
-        HANDLER = config("COMMAND_HANDLER", default=None)
-        SUDO = set(int(x) for x in config("SUDO_USERS", "").split())
-    except BaseException:
-        VC_SESSION= None
-        VC_API_ID = None
-        VC_API_HASH= None
-        HANDLER= None
-        SUDO= None
+    REDIS_URI = config("REDIS_URI", default=None)
+    REDIS_PASSWORD = config("REDIS_PASSWORD", default=None)
