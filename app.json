@@ -30,6 +30,10 @@
             "description": "Your session string. Can be added now, or after deploy. (The bot will NOT work without a session string!!)",
             "value": ""
         },
+        "BOT_USERNAME": {
+            "description": "The bot's username. You can get it from bot father",
+            "value": ""
+        },
         "REDIS_URI": {
             "description": "Redis endpoint URL, from redislabs.com",
             "value": ""
@@ -53,13 +57,15 @@
             "value": ""
         }
     },
+    "addons": [{
+    "plan": "heroku-postgresql",
+    "options": {
+      "version": "12"
+    }
+  }],
     "formation": {
         "worker": {
             "quantity": 1,
-            "size": "free"
-        },
-        "web": {
-            "quantity": 0,
             "size": "free"
         }
     }
