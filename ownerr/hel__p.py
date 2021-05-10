@@ -76,26 +76,26 @@ async def cbire(_ , cbq: CallbackQuery):
    cid=cbq.id
    cdt=cbq.data
    if cdt == "_admin_h":
-      keyboard = InlineKeyboardMarkup(
+      keyboard = InlineKeyboardMarkup([
             paginate_modules(0, HELP_COMMANDA, "help"),
-            [
+
                [InlineKeyboardButton(
                             "Back",
                             callback_data= "b_k"
-             )]],
+             )],
              [
                [InlineKeyboardButton(
                             "Close",
                             callback_data= "kloz"
-             )]],
-        )
+             )]
+        ])
       cbq.edit_message_caption(
                             caption="This is the help for admin commmands to manage your group efficiently",
                             reply_markup = keyboard)
    if cdt == "_util_h":
-      keyboard = InlineKeyboardMarkup(
+      keyboard = InlineKeyboardMarkup([
             paginate_modules(0, HELP_COMMANDU, "help"),
-            [
+            
                [InlineKeyboardButton(
                             "Back",
                             callback_data= "b_k"
@@ -127,19 +127,18 @@ async def cbire(_ , cbq: CallbackQuery):
                             caption="This is the help for assistant commmands to manage your userbot",
                             reply_markup = keyboard)
    if cdt == "_own_h":
-      keyboard = InlineKeyboardMarkup(
+      keyboard = InlineKeyboardMarkup([
             paginate_modules(0, HELP_COMMANDO, "help"),
-            [
                [InlineKeyboardButton(
                             "Back",
                             callback_data= "b_k"
-             )]],
+             )],
              [
                [InlineKeyboardButton(
                             "Close",
                             callback_data= "kloz"
-             )]],
-        )
+             )],
+        ])
       cbq.edit_message_caption(
                             caption="This is the help for owner commmands ",
                             reply_markup = keyboard)
@@ -149,25 +148,19 @@ async def cbire(_ , cbq: CallbackQuery):
                         [InlineKeyboardButton(
                             "Group Admin Plugins",
                             callback_data= "_admin_h"
-                        )]
-                    ],
-                    [
+                        )],
                         [InlineKeyboardButton(
                             "Util Plugins",
                             callback_data= "_util_h"
-                        )],
-                        [InlineKeyboardButton(
+                        ),
+                        InlineKeyboardButton(
                             "ASSISTANT Plugins",
                             callback_data= "_ast_h"
-                        )]
-                    ],
-                    [
+                        )],
                         [InlineKeyboardButton(
                             "OWNER Plugins",
                             callback_data= "_own_h"
-                        )]
-                    ],
-                    [
+                        )],
                         [InlineKeyboardButton(
                             "Back",
                             callback_data= "b_k"
