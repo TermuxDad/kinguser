@@ -55,7 +55,7 @@ if vr.get("SUDOS") is None:
     vr.set("SUDOS", "1")
 
 if vr.get("VC_SESSION"):
-    client = Client(vr.get("VC_SESSSION"), vr.("VC_API_ID"), vr.("VC_API_HASH"))
+    client = Client(vr.get("VC_SESSSION"), vr.get("VC_API_ID"), vr.get("VC_API_HASH"))
     vcbot = PyTgCalls(client)
 else:
     vcbot = None
