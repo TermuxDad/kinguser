@@ -99,7 +99,6 @@ async def cbire(_ , cbq: CallbackQuery):
                             "Back",
                             callback_data= "b_k"
              )],
-             [
                [InlineKeyboardButton(
                             "Close",
                             callback_data= "kloz"
@@ -116,7 +115,6 @@ async def cbire(_ , cbq: CallbackQuery):
                             "Back",
                             callback_data= "b_k"
              )],
-             [
                [InlineKeyboardButton(
                             "Close",
                             callback_data= "kloz"
@@ -132,7 +130,6 @@ async def cbire(_ , cbq: CallbackQuery):
                             "Back",
                             callback_data= "b_k"
              )],
-             [
                [InlineKeyboardButton(
                             "Close",
                             callback_data= "kloz"
