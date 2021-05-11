@@ -18,7 +18,7 @@ from uti.misc import paginate_modules
 BOT_RUNTIME = 0
 loop = asyncio.get_event_loop()
 HNDLR="."
-
+global BOT_RUNTIME, HELP_COMMANDS, HELP_COMMANDU, HELP_COMMANDA, HELP_COMMANDO, HELP_COMMANDAST
 async def get_runtime():
     return BOT_RUNTIME
 
@@ -38,7 +38,6 @@ async def reinitial_restart():
 
 
 async def reboot():
-    global BOT_RUNTIME, HELP_COMMANDS, HELP_COMMANDU, HELP_COMMANDA, HELP_COMMANDO, HELP_COMMANDAST
     importlib.reload(importlib.import_module("adminss"))
     importlib.reload(importlib.import_module("ownerr"))
     importlib.reload(importlib.import_module("utilss"))
