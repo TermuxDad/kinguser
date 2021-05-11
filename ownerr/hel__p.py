@@ -88,7 +88,7 @@ async def cbire(_ , cbq: CallbackQuery):
                             callback_data= "kloz"
              )]
         ])
-      cbq.edit_message_caption(
+      await cbq.edit_message_caption(
                             caption="This is the help for admin commmands to manage your group efficiently",
                             reply_markup = keyboard)
    if cdt == "_util_h":
@@ -104,13 +104,12 @@ async def cbire(_ , cbq: CallbackQuery):
                             callback_data= "kloz"
              )],
         ])
-      cbq.edit_message_caption(
+      await cbq.edit_message_caption(
                             caption="This is the help for util commmands to make your life easy peasy",
                             reply_markup = keyboard)
    if cdt == "_ast_h":
-      keyboard = InlineKeyboardMarkup(
+      keyboard = InlineKeyboardMarkup([
             paginate_modules(0, HELP_COMMANDAST, "help"),
-            [
                [InlineKeyboardButton(
                             "Back",
                             callback_data= "b_k"
@@ -120,7 +119,7 @@ async def cbire(_ , cbq: CallbackQuery):
                             callback_data= "kloz"
              )],
         ])
-      cbq.edit_message_caption(
+      await cbq.edit_message_caption(
                             caption="This is the help for assistant commmands to manage your userbot",
                             reply_markup = keyboard)
    if cdt == "_own_h":
@@ -135,7 +134,7 @@ async def cbire(_ , cbq: CallbackQuery):
                             callback_data= "kloz"
              )],
         ])
-      cbq.edit_message_caption(
+      await cbq.edit_message_caption(
                             caption="This is the help for owner commmands ",
                             reply_markup = keyboard)
    if cdt == "b_k":
@@ -161,11 +160,11 @@ async def cbire(_ , cbq: CallbackQuery):
                             "Back",
                             callback_data= "b_k"
                   )]])
-        cbq.edit_message_caption(
+        await cbq.edit_message_caption(
                             caption=f"You are accessing help for **King Userbot** \n __Everyone is a king. Until the real king arrives.__",
                             reply_markup = keyboard)
    if cdt == "kloz":
-         cbq.message.delete()
+         await cbq.message.delete()
 
 async def help_button_callback(_, __, query):
     if re.match(r"help_", query.data):
