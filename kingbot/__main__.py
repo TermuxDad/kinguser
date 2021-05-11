@@ -19,7 +19,7 @@ loop = asyncio.get_event_loop()
 HNDLR="."
 async def get_runtime():
     return BOT_RUNTIME
-Class Help_category(object):
+class Help_category(object):
   HC={}
   HA={}
   HU={}
