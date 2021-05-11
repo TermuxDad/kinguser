@@ -15,10 +15,6 @@ from adminss import ALL_ADMINN
 from utilss import ALL_UTILS
 from ownerr import ALL_OWN
 from uti.misc import paginate_modules
-HELP_COMMANDU = {}
-HELP_COMMANDA = {}
-HELP_COMMANDO = {}
-HELP_COMMANDAST = {}
 BOT_RUNTIME = 0
 loop = asyncio.get_event_loop()
 HNDLR="."
@@ -150,6 +146,10 @@ async def start_bot():
     global AdminSettings, Owner
     AdminSettings=[1359459092]
     Owner= 1359459092
+    HELP_COMMANDU = {}
+    HELP_COMMANDA = {}
+    HELP_COMMANDO = {}
+    HELP_COMMANDAST = {}
     for modul in ALL_UTILS:
         imported_module = importlib.import_module("utilss." + modul)
         if hasattr(imported_module, "__MODULE__") and imported_module.__MODULE__:
