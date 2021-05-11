@@ -4,7 +4,7 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton , InlineQu
 from pyrogram import filters 
 # import kingbot
 from kingbot import kingbot ,setbot
-from kingbot.__main__ import HELP_COMMANDS , HELP_COMMANDAST, HELP_COMMANDO , HELP_COMMANDU, HELP_COMMANDA
+from kingbot.__main__.start import HELP_COMMANDS , HELP_COMMANDAST, HELP_COMMANDO , HELP_COMMANDU, HELP_COMMANDA
 import re
 HNDLR="."
 AdminSettings= [1359459092]
