@@ -105,7 +105,11 @@ async def reboot():
                 HELP_COMMANDAST[imported_module.__MODULE__.lower()] = imported_module
             importlib.reload(imported_module)
     HELP_COMMANDS = {**HELP_COMMANDA,**HELP_COMMANDU,**HELP_COMMANDO, **HELP_COMMANDAST}
-
+    Help_category.HO=HELP_COMMANDO
+    Help_category.HA=HELP_COMMANDA
+    Help_category.HU=HELP_COMMANDU
+    Help_category.HAT=HELP_COMMANDAST
+    Help_category.HC=HELP_COMMANDS
 # await setbot.send_message(Owner, "Restart successfully!")
 
 async def restart_all():
