@@ -54,6 +54,7 @@ async def in_h_lp(_ , inline_query):
             ),
         ]
     )
+  print(HELP_COMMANDAST)
 def cowner(func):
         async def wrapper(_, c_q: CallbackQuery):
             if c_q.from_user.id in AdminSettings:
