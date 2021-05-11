@@ -137,6 +137,7 @@ async def reinitial():
 
 
 async def start_bot():
+    global BOT_RUNTIME, HELP_COMMANDS, HELP_COMMANDU, HELP_COMMANDA, HELP_COMMANDO, HELP_COMMANDAST
     # sys.excepthook = except_hook
     print("----- Checking user and bot... -----")
     await reinitial()
