@@ -38,7 +38,7 @@ async def reinitial_restart():
 
 
 async def reboot():
-    global BOT_RUNTIME, HELP_COMMANDS
+    global BOT_RUNTIME, HELP_COMMANDS, HELP_COMMANDU, HELP_COMMANDA, HELP_COMMANDO, HELP_COMMANDAST
     importlib.reload(importlib.import_module("adminss"))
     importlib.reload(importlib.import_module("ownerr"))
     importlib.reload(importlib.import_module("utilss"))
@@ -194,8 +194,8 @@ async def start_bot():
                     raise Exception("Can't have two modules with the same name! Please change one")
             if hasattr(imported_module, "__HELP__") and imported_module.__HELP__:
                 HELP_COMMANDAST[imported_module.__MODULE__.lower()] = imported_module
+            HELP_COMMANDS = {**HELP_COMMANDA,**HELP_COMMANDU,**HELP_COMMANDO, **HELP_COMMANDAST}
             await idle()
-HELP_COMMANDS = {**HELP_COMMANDA,**HELP_COMMANDU,**HELP_COMMANDO, **HELP_COMMANDAST}
 if __name__ == '__main__':
     BOT_RUNTIME = int(time.time())
     loop.run_until_complete(start_bot())
