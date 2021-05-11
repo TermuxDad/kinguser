@@ -201,8 +201,8 @@ if __name__ == '__main__':
     BOT_RUNTIME = int(time.time())
     loop.run_until_complete(start_bot())
 class Help_category(object):
- HELP_COMMANDAST=h_c.HAT
- HELP_COMMANDA=h_c.HA
- HELP_COMMANDS=h_c.HC
- HELP_COMMANDU=h_c.HU
- HELP_COMMANDO=h_c.HO
+   HO=HELP_COMMANDO
+   HA=HELP_COMMANDA
+   HU=HELP_COMMANDU
+   HAT=HELP_COMMANDAST
+   HC=HELP_COMMANDS
