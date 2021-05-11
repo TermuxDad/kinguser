@@ -71,7 +71,7 @@ def cowner(func):
                     show_alert=True)
         return wrapper
 @cowner
-@setbot.on_callback_query(filters.user(AdminSettings))
+@kingbot.on_callback_query(filters.user(AdminSettings))
 async def cbire(_ , cbq: CallbackQuery):
    cid=cbq.id
    cdt=cbq.data
