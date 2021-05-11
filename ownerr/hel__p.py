@@ -4,11 +4,15 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton , InlineQu
 from pyrogram import filters 
 # import kingbot
 from kingbot import kingbot ,setbot
-from kingbot.__main__.start import HELP_COMMANDS , HELP_COMMANDAST, HELP_COMMANDO , HELP_COMMANDU, HELP_COMMANDA
+from kingbot.__main__.start import Help_category as h_c
 import re
 HNDLR="."
 AdminSettings= [1359459092]
-
+HELP_COMMANDAST=h_c.HAT
+HELP_COMMANDA=h_c.HA
+HELP_COMMANDS=h_c.HC
+HELP_COMMANDU=h_c.HU
+HELP_COMMANDO=h_c.HO
 @kingbot.on_message(filters.command("help",HNDLR) & filters.user(AdminSettings))
 async def h_lp(_ , message):
   res=await kingbot.get_inline_bot_results("Devilkalund2bot", "hlpin")
