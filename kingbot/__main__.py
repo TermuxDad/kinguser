@@ -16,6 +16,12 @@ from ownerr import ALL_OWN
 from kingbot.plugins import ALL_INB
 loop = asyncio.get_event_loop()
 HNDLR="."
+BOT_RUNTIME = 0
+HELP_COMMANDU = {}
+HELP_COMMANDA = {}
+HELP_COMMANDO = {}
+HELP_COMMANDAST = {}
+HELP_COMMANDS = {}
 async def get_runtime():
     return BOT_RUNTIME
 
