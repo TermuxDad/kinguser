@@ -14,7 +14,7 @@ from adminss import ALL_ADMINN
 from utilss import ALL_UTILS
 from ownerr import ALL_OWN
 from uti.misc import paginate_modules
-from sql_helper.global import Global
+from sql_helper.global import globals
 loop = asyncio.get_event_loop()
 HNDLR="."
 async def get_runtime():
