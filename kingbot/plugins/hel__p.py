@@ -7,7 +7,14 @@ from kingbot import kingbot ,setbot , vr
 import re
 HNDLR="."
 AdminSettings= [1359459092]
-
+class ser(object)
+  HC,HU,HA,HO,HAT
+  async def getall(HELP_COMMANDS, HELP_COMMANDU, HELP_COMMANDA, HELP_COMMANDO, HELP_COMMANDAST)
+   HC=HELP_COMMANDS
+   HU=HELP_COMMANDU
+   HA=HELP_COMMANDA
+   HO=HELP_COMMANDO
+   HAT=HELP_COMMANDAST
 @kingbot.on_message(filters.command("help",HNDLR) & filters.user(AdminSettings))
 async def h_lp(_ , message):
   res=await kingbot.get_inline_bot_results("Devilkalund2bot", "hlpin")
@@ -72,7 +79,11 @@ def cowner(func):
 @setbot.on_callback_query(filters.user(AdminSettings))
 @cowner
 async def cbire(_ , cbq: CallbackQuery):
-   from kingbot.__main__ import HELP_COMMANDS, HELP_COMMANDU, HELP_COMMANDA, HELP_COMMANDO, HELP_COMMANDAST
+   HELP_COMMANDU = ser.HU
+   HELP_COMMANDA = ser.HA
+   HELP_COMMANDO = ser.HO
+   HELP_COMMANDAST = ser.HAT
+   HELP_COMMANDS = ser.HC
    cid=cbq.id
    cdt=cbq.data
    if cdt == "_admin_h":
