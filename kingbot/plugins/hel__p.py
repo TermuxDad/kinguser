@@ -7,7 +7,7 @@ from kingbot import kingbot ,setbot , vr
 import re
 HNDLR="."
 AdminSettings= [1359459092]
-class ser(object)
+class ser(object):
   HC,HU,HA,HO,HAT
   async def getall(HELP_COMMANDS, HELP_COMMANDU, HELP_COMMANDA, HELP_COMMANDO, HELP_COMMANDAST)
    HC=HELP_COMMANDS
