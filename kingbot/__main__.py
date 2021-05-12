@@ -191,11 +191,11 @@ async def start_bot():
             if hasattr(imported_module, "__HELP__") and imported_module.__HELP__:
                 HELP_COMMANDAST[imported_module.__MODULE__.lower()] = imported_module
             HELP_COMMANDS = {**HELP_COMMANDA,**HELP_COMMANDU,**HELP_COMMANDO, **HELP_COMMANDAST}
-            addglobal("HA",HELP_COMMANDA)
-            addglobal("HO",HELP_COMMANDO)
-            addglobal("HAT",HELP_COMMANDAST)
-            addglobal("HU",HELP_COMMANDU)
-            addglobal("HC",HELP_COMMANDS)
+            Global.addglobal("HA",HELP_COMMANDA)
+            Global.addglobal("HO",HELP_COMMANDO)
+            Global.addglobal("HAT",HELP_COMMANDAST)
+            Global.addglobal("HU",HELP_COMMANDU)
+            Global.addglobal("HC",HELP_COMMANDS)
             await idle()
 if __name__ == '__main__':
     BOT_RUNTIME = int(time.time())
