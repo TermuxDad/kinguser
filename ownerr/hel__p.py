@@ -2,16 +2,16 @@ from uti.misc import paginate_modules
 from pyrogram import idle
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton , InlineQuery ,Message, CallbackQuery, InlineQueryResultPhoto
 from pyrogram import filters 
-# import kingbot
+from sql_helper.global import getglobal
 from kingbot import kingbot ,setbot , vr
 import re
 HNDLR="."
 AdminSettings= [1359459092]
-HELP_COMMANDAST=vr.get("HAT")
-HELP_COMMANDA=vr.get("HA")
-HELP_COMMANDS=vr.get("HC")
-HELP_COMMANDU=vr.get("HU")
-HELP_COMMANDO=vr.get("HO")
+HELP_COMMANDAST=getglobal("HAT")
+HELP_COMMANDA=getglobal("HA")
+HELP_COMMANDS=getglobal("HC")
+HELP_COMMANDU=getglobal("HU")
+HELP_COMMANDO=getglobal("HO")
 @kingbot.on_message(filters.command("help",HNDLR) & filters.user(AdminSettings))
 async def h_lp(_ , message):
   res=await kingbot.get_inline_bot_results("Devilkalund2bot", "hlpin")
