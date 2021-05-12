@@ -10,11 +10,11 @@ AdminSettings= [1359459092]
 class ser(object):
   global HC,HU,HA,HO,HAT
   async def getall(HELP_COMMANDS, HELP_COMMANDU, HELP_COMMANDA, HELP_COMMANDO, HELP_COMMANDAST):
-   global HC=HELP_COMMANDS
-   global HU=HELP_COMMANDU
-   global HA=HELP_COMMANDA
-   global HO=HELP_COMMANDO
-   global HAT=HELP_COMMANDAST
+   HC=HELP_COMMANDS
+   HU=HELP_COMMANDU
+   HA=HELP_COMMANDA
+   HO=HELP_COMMANDO
+   HAT=HELP_COMMANDAST
 @kingbot.on_message(filters.command("help",HNDLR) & filters.user(AdminSettings))
 async def h_lp(_ , message):
   res=await kingbot.get_inline_bot_results("Devilkalund2bot", "hlpin")
