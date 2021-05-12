@@ -53,18 +53,12 @@ async def in_h_lp(_ , inline_query):
         ]
     )
 def cowner(func):
-        async def wrapper(_, c_q: CallbackQuery):
-            if c_q.from_user.id in AdminSettings:
-                try:
-                    await func(c_q)
-                except MessageNotModified:
-                    await c_q.answer("Nothing Found to Refresh 🤷‍♂️", show_alert=True)
-                except MessageIdInvalid:
-                    await c_q.answer("Sorry, I Don't Have Permissions to edit this 😔",
-                                     show_alert=True)
+        async def wrapper(_, cbq: CallbackQuery):
+            if cbq.from_user.id in AdminSettings:
+                pass
             else:
                 userr = await setbot.get_user(Owner)
-                await c_q.answer(
+                await cbq.answer(
                     f"Only {userr.first_name} Can Access this...! Get yourself a Userbot🤘",
                     show_alert=True)
         return wrapper
@@ -72,11 +66,6 @@ def cowner(func):
 @setbot.on_callback_query(filters.user(AdminSettings))
 @cowner
 async def cbire(_ , cbq: CallbackQuery):
-   HELP_COMMANDU = ser.HU
-   HELP_COMMANDA = ser.HA
-   HELP_COMMANDO = ser.HO
-   HELP_COMMANDAST = ser.HAT
-   HELP_COMMANDS = ser.HC
    cid=cbq.id
    cdt=cbq.data
    if cdt == "_admin_h":
