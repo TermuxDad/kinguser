@@ -14,7 +14,6 @@ from adminss import ALL_ADMINN
 from utilss import ALL_UTILS
 from ownerr import ALL_OWN
 from kingbot.plugins import ALL_INB
-from kingbot.plugins.hel__p import ser
 loop = asyncio.get_event_loop()
 HNDLR="."
 BOT_RUNTIME = 0
@@ -208,7 +207,6 @@ async def start_bot():
         if hasattr(imported_module, "__HELP__") and imported_module.__HELP__:
             HELP_COMMANDO[imported_module.__MODULE__.lower()] = imported_module.__HELP__
     HELP_COMMANDS = {**HELP_COMMANDA,**HELP_COMMANDU,**HELP_COMMANDO, **HELP_COMMANDAST}
-    await ser.getall(HELP_COMMANDS, HELP_COMMANDU, HELP_COMMANDA, HELP_COMMANDO, HELP_COMMANDAST)
     await idle()
 if __name__ == '__main__':
     BOT_RUNTIME = int(time.time())
