@@ -12,7 +12,6 @@ AdminSettings= [1359459092]
 async def h_lp(_ , message):
   res=await kingbot.get_inline_bot_results("Devilkalund2bot", "hlpin")
   await kingbot.send_inline_bot_result(message.chat.id, res.query_id, res.results[0].id)
-  await message.reply_text(HELP_COMMANDAST)
 @setbot.on_inline_query(filters.regex("hlpin"))
 async def in_h_lp(_ , inline_query):
   keboard= InlineKeyboardMarkup(
@@ -79,7 +78,7 @@ async def cbire(_ , cbq: CallbackQuery):
       keyboard = InlineKeyboardMarkup(
             paginate_modules(0, HELP_COMMANDA, "help"))
       await cbq.edit_message_caption(
-                            caption="This is the help for admin commmands to manage your group efficiently",
+                            caption=f"This is the help for admin commmands to manage your group efficiently+{HELP_COMMANDA}",
                             reply_markup = keyboard)
    if cdt == "_util_h":
       keyboard = InlineKeyboardMarkup([
