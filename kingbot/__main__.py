@@ -190,7 +190,7 @@ async def start_bot():
             if hasattr(imported_module, "__HELP__") and imported_module.__HELP__:
                 HELP_COMMANDAST[imported_module.__MODULE__.lower()] = imported_module
     for moduloo in ALL_INB:
-        imported_module = importlib.import_module("kingbot.plugins." + modulst)
+        imported_module = importlib.import_module("kingbot.plugins." + moduloo)
         if hasattr(imported_module, "__MODULE__") and imported_module.__MODULE__:
             imported_module.__MODULE__ = imported_module.__MODULE__
         if hasattr(imported_module, "__MODULE__") and imported_module.__MODULE__:
