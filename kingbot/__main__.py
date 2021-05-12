@@ -4,7 +4,7 @@ import importlib
 import sys
 import time
 import traceback
-from sql_helper.global addglobal
+from sql_helper.global import addglobal
 from pyrogram import idle
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton , InlineQuery ,Message, CallbackQuery, InlineQueryResultPhoto
 from pyrogram import filters 
