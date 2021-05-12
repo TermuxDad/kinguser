@@ -64,7 +64,6 @@ def cowner(func):
         return wrapper
 
 @setbot.on_callback_query(filters.user(AdminSettings))
-@cowner
 async def cbire(_ , cbq: CallbackQuery):
    cid=cbq.id
    cdt=cbq.data
