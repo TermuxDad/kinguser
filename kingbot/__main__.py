@@ -13,6 +13,7 @@ from assistant import ALL_AST
 from adminss import ALL_ADMINN
 from utilss import ALL_UTILS
 from ownerr import ALL_OWN
+from kingbot.plugins import ALL_INB
 loop = asyncio.get_event_loop()
 HNDLR="."
 async def get_runtime():
@@ -188,6 +189,17 @@ async def start_bot():
                     raise Exception("Can't have two modules with the same name! Please change one")
             if hasattr(imported_module, "__HELP__") and imported_module.__HELP__:
                 HELP_COMMANDAST[imported_module.__MODULE__.lower()] = imported_module
+    for moduloo in ALL_INB:
+        imported_module = importlib.import_module("kingbot.plugins." + modulst)
+        if hasattr(imported_module, "__MODULE__") and imported_module.__MODULE__:
+            imported_module.__MODULE__ = imported_module.__MODULE__
+        if hasattr(imported_module, "__MODULE__") and imported_module.__MODULE__:
+            if not imported_module.__MODULE__.lower() in HELP_COMMANDO:
+                HELP_COMMANDO[imported_module.__MODULE__.lower()] = imported_module
+            else:
+                raise Exception("Can't have two modules with the same name! Please change one")
+        if hasattr(imported_module, "__HELP__") and imported_module.__HELP__:
+            HELP_COMMANDO[imported_module.__MODULE__.lower()] = imported_module
             HELP_COMMANDS = {**HELP_COMMANDA,**HELP_COMMANDU,**HELP_COMMANDO, **HELP_COMMANDAST}
             await idle()
 if __name__ == '__main__':
