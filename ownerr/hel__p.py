@@ -2,7 +2,7 @@ from uti.misc import paginate_modules
 from pyrogram import idle
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton , InlineQuery ,Message, CallbackQuery, InlineQueryResultPhoto
 from pyrogram import filters 
-from sql_helper.global import getglobal
+from sql_helper.globals import Global
 from kingbot import kingbot ,setbot , vr
 import re
 HNDLR="."
