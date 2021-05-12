@@ -7,11 +7,7 @@ from kingbot import kingbot ,setbot , vr
 import re
 HNDLR="."
 AdminSettings= [1359459092]
-HELP_COMMANDAST=getglobal("HAT")
-HELP_COMMANDA=getglobal("HA")
-HELP_COMMANDS=getglobal("HC")
-HELP_COMMANDU=getglobal("HU")
-HELP_COMMANDO=getglobal("HO")
+
 @kingbot.on_message(filters.command("help",HNDLR) & filters.user(AdminSettings))
 async def h_lp(_ , message):
   res=await kingbot.get_inline_bot_results("Devilkalund2bot", "hlpin")
@@ -76,6 +72,11 @@ def cowner(func):
 @cowner
 @setbot.on_callback_query(filters.user(AdminSettings))
 async def cbire(_ , cbq: CallbackQuery):
+   HELP_COMMANDAST=Global.getglobal("HAT")
+   HELP_COMMANDA=Global.getglobal("HA")
+   HELP_COMMANDS=Global.getglobal("HC")
+   HELP_COMMANDU=Global.getglobal("HU")
+   HELP_COMMANDO=Global.getglobal("HO")
    cid=cbq.id
    cdt=cbq.data
    if cdt == "_admin_h":
@@ -166,7 +167,8 @@ async def help_button_callback(_, __, query):
 
 help_button_create = filters.create(help_button_callback)
 @setbot.on_callback_query(help_button_create)
-async def help_button(_, query):
+async def help_button(_, query):    
+    HELP_COMMANDS=Global.getglobal("HC")
     mod_match = re.match(r"help_module\((.+?)\)", query.data)
     back_match = re.match(r"help_back", query.data)
     if mod_match:
