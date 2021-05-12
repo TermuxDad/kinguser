@@ -68,8 +68,9 @@ def cowner(func):
                     f"Only {userr.first_name} Can Access this...! Get yourself a Userbot🤘",
                     show_alert=True)
         return wrapper
-@cowner
+
 @setbot.on_callback_query(filters.user(AdminSettings))
+@cowner
 async def cbire(_ , cbq: CallbackQuery):
    from kingbot.__main__ import HELP_COMMANDS, HELP_COMMANDU, HELP_COMMANDA, HELP_COMMANDO, HELP_COMMANDAST
    cid=cbq.id
