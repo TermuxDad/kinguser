@@ -3,8 +3,7 @@ from pyrogram import idle
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton , InlineQuery ,Message, CallbackQuery, InlineQueryResultPhoto
 from pyrogram import filters 
 from kingbot import kingbot ,setbot , vr
-from kingbot.__main__ import HELP_COMMANDS, HELP_COMMANDU, HELP_COMMANDA, HELP_COMMANDO, HELP_COMMANDAST
- 
+
 import re
 HNDLR="."
 AdminSettings= [1359459092]
