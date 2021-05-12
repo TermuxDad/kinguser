@@ -3,16 +3,16 @@ from pyrogram import idle
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton , InlineQuery ,Message, CallbackQuery, InlineQueryResultPhoto
 from pyrogram import filters 
 # import kingbot
-from kingbot import kingbot ,setbot
+from kingbot import kingbot ,setbot , vr
 from kingbot.__main__ import Help_category as h_c
 import re
 HNDLR="."
 AdminSettings= [1359459092]
-HELP_COMMANDAST=h_c.HAT
-HELP_COMMANDA=h_c.HA
-HELP_COMMANDS=h_c.HC
-HELP_COMMANDU=h_c.HU
-HELP_COMMANDO=h_c.HO
+HELP_COMMANDAST=vr.get("HAT")
+HELP_COMMANDA=vr.get("HA")
+HELP_COMMANDS=vr.get("HC")
+HELP_COMMANDU=vr.get("HU")
+HELP_COMMANDO=vr.get("HO")
 @kingbot.on_message(filters.command("help",HNDLR) & filters.user(AdminSettings))
 async def h_lp(_ , message):
   res=await kingbot.get_inline_bot_results("Devilkalund2bot", "hlpin")
