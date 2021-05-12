@@ -73,6 +73,7 @@ def cowner(func):
 @cowner
 @setbot.on_callback_query(filters.user(AdminSettings))
 async def cbire(_ , cbq: CallbackQuery):
+   from kingbot.__main__ import HELP_COMMANDS, HELP_COMMANDU, HELP_COMMANDA, HELP_COMMANDO, HELP_COMMANDAST
    cid=cbq.id
    cdt=cbq.data
    if cdt == "_admin_h":
@@ -164,6 +165,7 @@ async def help_button_callback(_, __, query):
 help_button_create = filters.create(help_button_callback)
 @setbot.on_callback_query(help_button_create)
 async def help_button(_, query):    
+    from kingbot.__main__ import HELP_COMMANDS, HELP_COMMANDU, HELP_COMMANDA, HELP_COMMANDO, HELP_COMMANDAST
     mod_match = re.match(r"help_module\((.+?)\)", query.data)
     back_match = re.match(r"help_back", query.data)
     if mod_match:
