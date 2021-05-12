@@ -28,10 +28,10 @@ def getglobal(variable):
     finally:
         SESSION.close()
 
-def addglobal(variable):
+def addglobal(variable , value):
     if SESSION.query(Global).filter(Global.variable == str(variable)).one_or_none():
         delglobal(variable)
-    adder = Global.(str(variable), value)
+    adder = Global(str(variable), value)
     SESSION.add(adder)
     SESSION.commit()
 
