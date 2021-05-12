@@ -101,11 +101,6 @@ async def reboot():
                 HELP_COMMANDAST[imported_module.__MODULE__.lower()] = imported_module
             importlib.reload(imported_module)
     HELP_COMMANDS = {**HELP_COMMANDA,**HELP_COMMANDU,**HELP_COMMANDO, **HELP_COMMANDAST}
-    Help_category.HO=HELP_COMMANDO
-    Help_category.HA=HELP_COMMANDA
-    Help_category.HU=HELP_COMMANDU
-    Help_category.HAT=HELP_COMMANDAST
-    Help_category.HC=HELP_COMMANDS
 # await setbot.send_message(Owner, "Restart successfully!")
 
 async def restart_all():
@@ -197,13 +192,13 @@ async def start_bot():
             if hasattr(imported_module, "__HELP__") and imported_module.__HELP__:
                 HELP_COMMANDAST[imported_module.__MODULE__.lower()] = imported_module
             HELP_COMMANDS = {**HELP_COMMANDA,**HELP_COMMANDU,**HELP_COMMANDO, **HELP_COMMANDAST}
+            vr.set("HA",HELP_COMMANDA)
+            vr.set("HO",HELP_COMMANDO)
+            vr.set("HAT",HELP_COMMANDAST)
+            vr.set("HU",HELP_COMMANDU)
+            vr.set("HC",HELP_COMMANDS)
             await idle()
 if __name__ == '__main__':
     BOT_RUNTIME = int(time.time())
     loop.run_until_complete(start_bot())
-class Help_category(object):
-   HO=HELP_COMMANDO
-   HA=HELP_COMMANDA
-   HU=HELP_COMMANDU
-   HAT=HELP_COMMANDAST
-   HC=HELP_COMMANDS
+
