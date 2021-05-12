@@ -194,7 +194,7 @@ async def start_bot():
                 else:
                     raise Exception("Can't have two modules with the same name! Please change one")
             if hasattr(imported_module, "__HELP__") and imported_module.__HELP__:
-                HELP_COMMANDAST[imported_module.__HELP__.lower()] = imported_module
+                HELP_COMMANDAST[imported_module.__MODULE__.lower()] = imported_module.__HELP__
     for moduloo in ALL_INB:
         imported_module = importlib.import_module("kingbot.plugins." + moduloo)
         if hasattr(imported_module, "__MODULE__") and imported_module.__MODULE__:
@@ -205,7 +205,7 @@ async def start_bot():
             else:
                 raise Exception("Can't have two modules with the same name! Please change one")
         if hasattr(imported_module, "__HELP__") and imported_module.__HELP__:
-            HELP_COMMANDO[imported_module.__HELP__.lower()] = imported_module
+            HELP_COMMANDO[imported_module.__MODULE__.lower()] = imported_module.__HELP__
     HELP_COMMANDS = {**HELP_COMMANDA,**HELP_COMMANDU,**HELP_COMMANDO, **HELP_COMMANDAST}
     await kingbot.send_message("me", HELP_COMMANDS)
     await idle()
