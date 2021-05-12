@@ -4,7 +4,6 @@ import importlib
 import sys
 import time
 import traceback
-from sql_helper.global import Global
 from pyrogram import idle
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton , InlineQuery ,Message, CallbackQuery, InlineQueryResultPhoto
 from pyrogram import filters 
@@ -15,9 +14,9 @@ from adminss import ALL_ADMINN
 from utilss import ALL_UTILS
 from ownerr import ALL_OWN
 from uti.misc import paginate_modules
+from sql_helper.global import *
 loop = asyncio.get_event_loop()
 HNDLR="."
-global BOT_RUNTIME, HELP_COMMANDS, HELP_COMMANDU, HELP_COMMANDA, HELP_COMMANDO, HELP_COMMANDAST
 async def get_runtime():
     return BOT_RUNTIME
 
