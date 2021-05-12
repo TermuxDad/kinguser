@@ -13,8 +13,6 @@ from assistant import ALL_AST
 from adminss import ALL_ADMINN
 from utilss import ALL_UTILS
 from ownerr import ALL_OWN
-from uti.misc import paginate_modules
-from sql_helper.globals import addglobal
 loop = asyncio.get_event_loop()
 HNDLR="."
 async def get_runtime():
@@ -191,11 +189,6 @@ async def start_bot():
             if hasattr(imported_module, "__HELP__") and imported_module.__HELP__:
                 HELP_COMMANDAST[imported_module.__MODULE__.lower()] = imported_module
             HELP_COMMANDS = {**HELP_COMMANDA,**HELP_COMMANDU,**HELP_COMMANDO, **HELP_COMMANDAST}
-            addglobal("HA",HELP_COMMANDA)
-            addglobal("HO",HELP_COMMANDO)
-            addglobal("HAT",HELP_COMMANDAST)
-            addglobal("HU",HELP_COMMANDU)
-            addglobal("HC",HELP_COMMANDS)
             await idle()
 if __name__ == '__main__':
     BOT_RUNTIME = int(time.time())
