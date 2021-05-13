@@ -98,7 +98,8 @@ async def cbire(_ , cbq: CallbackQuery):
              )])
       await cbq.edit_message_caption(
                             caption="This is the help for util commmands to make your life easy peasy",
-                            reply_markup = InlineKeyboardMarkup(keyboard))
+                            )
+      await cbq.edit_message_reply_markup(reply_markup=InlineKeyboardMarkup(keyboard))
    if cdt == "_ast_h":
       keyboard = paginate_modules(0, HELP_COMMANDAST, "help")
       keyboard.append([InlineKeyboardButton(
@@ -111,7 +112,8 @@ async def cbire(_ , cbq: CallbackQuery):
              )])
       await cbq.edit_message_caption(
                             caption="This is the help for assistant commmands to manage your userbot",
-                            reply_markup = InlineKeyboardMarkup(keyboard))
+                            )
+      await cbq.edit_message_reply_markup(reply_markup=InlineKeyboardMarkup(keyboard))
    if cdt == "_own_h":
       keyboard =   paginate_modules(0, HELP_COMMANDO, "help")
       keyboard.append([InlineKeyboardButton(
@@ -124,10 +126,10 @@ async def cbire(_ , cbq: CallbackQuery):
              )])
       await cbq.edit_message_caption(
                             caption="This is the help for owner commmands ",
-                            reply_markup = InlineKeyboardMarkup(keyboard))
+                            )
+      await cbq.edit_message_reply_markup(reply_markup=InlineKeyboardMarkup(keyboard))
    if cdt == "b_k":
-        keboard=[
-                        [InlineKeyboardButton(
+        keboard=[[InlineKeyboardButton(
                             "Group Admin Plugins",
                             callback_data= "_admin_h"
                         )],
@@ -149,7 +151,8 @@ async def cbire(_ , cbq: CallbackQuery):
                   )]]
         await cbq.edit_message_caption(
                             caption=f"You are accessing help for **King Userbot** \n __Everyone is a king. Until the real king arrives.__",
-                            reply_markup =InlineKeyboardMarkup(keyboard))
+                            )
+        await cbq.edit_message_reply_markup(reply_markup=InlineKeyboardMarkup(keyboard))
    if cdt == "kloz":
          await kingbot.delete_messages(chat_id=cbq.message.chat.id,message_ids=cbq.message.message_id)
 
@@ -192,7 +195,29 @@ async def help_button(_, query):
         )
 
     elif back_match:
-        await kingbot.delete_messages(chat_id=cbq.message.chat.id,message_ids=cbq.message.message_id)
-
+        keboard=[[InlineKeyboardButton(
+                            "Group Admin Plugins",
+                            callback_data= "_admin_h"
+                        )],
+                        [InlineKeyboardButton(
+                            "Util Plugins",
+                            callback_data= "_util_h"
+                        ),
+                        InlineKeyboardButton(
+                            "ASSISTANT Plugins",
+                            callback_data= "_ast_h"
+                        )],
+                        [InlineKeyboardButton(
+                            "OWNER Plugins",
+                            callback_data= "_own_h"
+                        )],
+                        [InlineKeyboardButton(
+                            "Close",
+                            callback_data= "kloz"
+                  )]]
+        await cbq.edit_message_caption(
+                            caption=f"You are accessing help for **King Userbot** \n __Everyone is a king. Until the real king arrives.__",
+                            )
+        await cbq.edit_message_reply_markup(reply_markup=InlineKeyboardMarkup(keyboard))
     await query.answer()
 
