@@ -82,7 +82,7 @@ async def cbire(_ , cbq: CallbackQuery):
                             callback_data= "kloz"
              )])
       await cbq.edit_message_caption(
-                            caption=f"This is the help for admin commmands to manage your group efficiently+{HELP_COMMANDA}",
+                            caption=f"This is the help for admin commmands to manage your group efficiently",
                             )
       await cbq.edit_message_reply_markup(reply_markup=InlineKeyboardMarkup(keyboard))
    if cdt == "_util_h":
