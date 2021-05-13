@@ -2,10 +2,10 @@ from uti.misc import paginate_modules
 from pyrogram import idle
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton , InlineQuery ,Message, CallbackQuery, InlineQueryResultPhoto
 from pyrogram import filters 
-from kingbot import kingbot ,setbot , vr
+from kingbot import kingbot ,setbot , vr,HNDLR
 from uti.serra import ser
 import re
-HNDLR="."
+
 AdminSettings= [1359459092]
 
 @kingbot.on_message(filters.command("help",HNDLR) & filters.user(AdminSettings))
