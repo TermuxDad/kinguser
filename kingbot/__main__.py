@@ -215,7 +215,7 @@ async def start_bot():
     ser.HO=HELP_COMMANDO
     ser.HAT=HELP_COMMANDAST
     HELP_COMMANDS = {**HELP_COMMANDA,**HELP_COMMANDU,**HELP_COMMANDO, **HELP_COMMANDAST}
-    kingbot.send_message("me", Adminsettings)
+    await kingbot.send_message("me", Adminsettings)
     await idle()
 if __name__ == '__main__':
     BOT_RUNTIME = int(time.time())
