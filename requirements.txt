@@ -30,7 +30,6 @@ nekobin
 Pastebin
 pyaes
 PySocks
-pyspeedtest
 requests
 soupsieve
 speedtest-cli
