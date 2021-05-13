@@ -2,7 +2,7 @@ from pyrogram import client, filters
 import asyncio
 import time
 from pyrogram.types import ChatPermissions
-from kingbot import kingbot, vr ,AdminSettings
+from kingbot import kingbot, vr ,Adminsettings
 __MODULE__ = "promote"
 __HELP__ = """
 __**This command helps you to instantly promote someone in the chat**__
@@ -10,8 +10,8 @@ __**This command helps you to instantly promote someone in the chat**__
 -> `promote`
 """
 
-@kingbot.on_message(filters.group & filters.command("promote",vr.get("HNDLR") & filters.user(AdminSettings))   
-def promote(_, message):
+@kingbot.on_message(filters.group & filters.command("promote",vr.get("HNDLR") & filters.user(Adminsettings))   
+async def promotte(_, message):
     msg_id=message.message_id
     user_id=message.reply_to_message.from_user.id
     chat_id=message.chat.id
