@@ -210,7 +210,7 @@ async def cbire(_ , cbq: CallbackQuery):
                             caption=f"You are accessing help for **King Userbot** \n __Everyone is a king. Until the real king arrives.__",
                             )
         await cbq.edit_message_reply_markup(reply_markup=InlineKeyboardMarkup(keyboard))
-   await query.answer()
+   await cbq.answer()
 # async def help_button_callback(_, __, query):
 #     if re.match(r"help_", query.data):
 #         return True
