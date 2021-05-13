@@ -23,7 +23,6 @@ Naked==0.1.31
 nekobin==0.0.3
 Pastebin==1.1.2
 psutil==5.8.0
-psycopg2==2.8.6
 py-tgcalls==0.5.0
 pyaes==1.6.1
 Pyrogram==1.2.9
@@ -44,3 +43,4 @@ TgCrypto==1.2.2
 typing-extensions==3.10.0.0
 urllib3==1.25.9
 yarl==1.6.3
+psycopg2==2.8.5
