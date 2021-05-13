@@ -46,8 +46,6 @@ try:
     else:
         vr.set("HNDLR", ".")
         HNDLR = vr.get("HNDLR")
-    if not udB.get("SUDO"):
-        vr.set("SUDO", "False")
 except BaseException:
     pass
 
