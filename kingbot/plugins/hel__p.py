@@ -77,7 +77,7 @@ async def cbire(_ , cbq: CallbackQuery):
             paginate_modules(0, HELP_COMMANDA, "help"))
       await cbq.edit_message_caption(
                             caption=f"This is the help for admin commmands to manage your group efficiently+{HELP_COMMANDA}",
-                            )
+                            reply_markup = keyboard)
    if cdt == "_util_h":
       keyboard = InlineKeyboardMarkup([
             paginate_modules(0, HELP_COMMANDU, "help"),
@@ -91,7 +91,7 @@ async def cbire(_ , cbq: CallbackQuery):
                             callback_data= "kloz"
              )],
         ])
-       await cbq.edit_message_caption(
+      await cbq.edit_message_caption(
                             caption="This is the help for util commmands to make your life easy peasy",
                             reply_markup = keyboard)
    if cdt == "_ast_h":
