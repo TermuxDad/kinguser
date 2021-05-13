@@ -19,7 +19,7 @@ if not Var.API_ID or not Var.API_HASH:
     exit(1)
 
 Adminsettings= {}
-Adminsettings= Adminsettings.append(Var.OWNER_ID)
+Adminsettings= Adminsettings.add(Var.OWNER_ID)
 
 
 START_TIME = datetime.now()
