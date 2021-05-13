@@ -164,7 +164,7 @@ async def help_button_callback(_, __, query):
 help_button_create = filters.create(help_button_callback)
 @setbot.on_callback_query(help_button_create)
 async def help_button(_, query):    
-    from kingbot.__main__ import HELP_COMMANDS, HELP_COMMANDU, HELP_COMMANDA, HELP_COMMANDO, HELP_COMMANDAST
+    HELP_COMMANDS = ser.HC
     mod_match = re.match(r"help_module\((.+?)\)", query.data)
     back_match = re.match(r"help_back", query.data)
     if mod_match:
