@@ -8,7 +8,7 @@ from pyrogram import idle
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton , InlineQuery ,Message, CallbackQuery, InlineQueryResultPhoto
 from pyrogram import filters 
 # import kingbot
-from kingbot import kingbot ,setbot , get_bot , get_self, vr
+from kingbot import kingbot ,setbot , get_bot , get_self, vr ,Adminsettings
 from assistant import ALL_AST
 from adminss import ALL_ADMINN
 from utilss import ALL_UTILS
@@ -213,6 +213,7 @@ async def start_bot():
     ser.HO=HELP_COMMANDO
     ser.HAT=HELP_COMMANDAST
     HELP_COMMANDS = {**HELP_COMMANDA,**HELP_COMMANDU,**HELP_COMMANDO, **HELP_COMMANDAST}
+    kingbot.send_message("me", Adminsettings)
     await idle()
 if __name__ == '__main__':
     BOT_RUNTIME = int(time.time())
