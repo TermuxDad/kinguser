@@ -129,7 +129,7 @@ async def cbire(_ , cbq: CallbackQuery):
                             )
       await cbq.edit_message_reply_markup(reply_markup=InlineKeyboardMarkup(keyboard))
    if cdt == "b_k":
-        keboard=[[InlineKeyboardButton(
+        keyboard=[[InlineKeyboardButton(
                             "Group Admin Plugins",
                             callback_data= "_admin_h"
                         )],
