@@ -15,6 +15,7 @@ from utilss import ALL_UTILS
 from ownerr import ALL_OWN
 from kingbot.plugins import ALL_INB
 from uti.serra import ser
+from uti.confi import Var
 loop = asyncio.get_event_loop()
 HNDLR="."
 BOT_RUNTIME = 0
@@ -139,6 +140,7 @@ async def reinitial():
 async def start_bot():
     global BOT_RUNTIME, HELP_COMMANDS, HELP_COMMANDU, HELP_COMMANDA, HELP_COMMANDO, HELP_COMMANDAST
     # sys.excepthook = except_hook
+    vr.set("Owne", Var.Owner_ID)
     print("----- Checking user and bot... -----")
     await reinitial()
     print("----------- Check done! ------------")
