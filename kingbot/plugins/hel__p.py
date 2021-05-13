@@ -217,7 +217,7 @@ async def cbire(_ , cbq: CallbackQuery):
 
 
 # help_button_create = filters.create(help_button_callback)
-@setbot.on_callback_query(filters.user(1359459092))
-async def help_button(_, query):  
+#@setbot.on_callback_query(filters.user(1359459092))
+"async def help_button(_, query):  
 
 
