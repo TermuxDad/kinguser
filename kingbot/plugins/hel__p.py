@@ -6,7 +6,7 @@ from kingbot import kingbot ,setbot , vr,Adminsettings
 from uti.serra import ser
 import re
 Admins= Adminsettings
-@kingbot.on_message(filters.command("help",".") & filters.user(Adminsettings))
+@kingbot.on_message(filters.command("help",".") & filters.user(1359459092))
 async def h_lp(_ , message):
   res=await kingbot.get_inline_bot_results("Devilkalund2bot", "hlpin")
   await kingbot.send_inline_bot_result(message.chat.id, res.query_id, res.results[0].id)
@@ -61,7 +61,7 @@ def cowner(func):
                     show_alert=True)
         return wrapper
 
-@setbot.on_callback_query(filters.user(Adminsettings))
+@setbot.on_callback_query(filters.user(1359459092))
 async def cbire(_ , cbq: CallbackQuery):
    HELP_COMMANDU = ser.HU
    HELP_COMMANDA = ser.HA
