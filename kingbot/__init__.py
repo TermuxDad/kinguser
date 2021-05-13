@@ -77,6 +77,7 @@ async def get_bot_inline(bot):
 async def get_self():
     global Owner, OwnerName, OwnerUsername, AdminSettings
     AdminSettings=[]
+    vr.LPUSH("SUDOS" , Owner)
     getself = await kingbot.get_me()
     Owner = getself.id
     if getself.last_name:
@@ -86,6 +87,7 @@ async def get_self():
     OwnerUsername = getself.username
     if Owner not in AdminSettings:
         AdminSettings.append(Owner)
+        
 
 
 async def get_bot():
