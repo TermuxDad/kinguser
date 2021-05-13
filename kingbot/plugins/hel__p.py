@@ -187,7 +187,7 @@ async def cbire(_ , cbq: CallbackQuery):
         )
 
    elif back_match:
-        keboard=[[InlineKeyboardButton(
+        keyboard=[[InlineKeyboardButton(
                             "Group Admin Plugins",
                             callback_data= "_admin_h"
                         )],
