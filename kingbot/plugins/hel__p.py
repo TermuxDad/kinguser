@@ -2,12 +2,10 @@ from uti.misc import paginate_modules
 from pyrogram import idle
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton , InlineQuery ,Message, CallbackQuery, InlineQueryResultPhoto
 from pyrogram import filters 
-from kingbot import kingbot ,setbot , vr,Admins
+from kingbot import kingbot ,setbot , vr,AdminSettings
 from uti.serra import ser
 import re
-
-
-
+Admins= AdminSettings
 @kingbot.on_message(filters.command("help",vr.get("HNDLR")) & filters.user(Admins))
 async def h_lp(_ , message):
   res=await kingbot.get_inline_bot_results("Devilkalund2bot", "hlpin")
