@@ -73,12 +73,19 @@ async def cbire(_ , cbq: CallbackQuery):
    cid=cbq.id
    cdt=cbq.data
    if cdt == "_admin_h":
-      keyboard = InlineKeyboardMarkup(
-            paginate_modules(0, HELP_COMMANDA, "help"))
+      keyboard = paginate_modules(0, HELP_COMMANDA, "help")
+      keyboard.append([InlineKeyboardButton(
+                            "Back",
+                            callback_data= "b_k"
+             )],
+               [InlineKeyboardButton(
+                            "Close",
+                            callback_data= "kloz"
+             )])
       await cbq.edit_message_caption(
                             caption=f"This is the help for admin commmands to manage your group efficiently+{HELP_COMMANDA}",
                             )
-      await cbq.edit_message_reply_markup(reply_markup=keyboard)
+      await cbq.edit_message_reply_markup(reply_markup=InlineKeyboardMarkup(keyboard))
    if cdt == "_util_h":
       keyboard = InlineKeyboardMarkup([
             paginate_modules(0, HELP_COMMANDU, "help"),
