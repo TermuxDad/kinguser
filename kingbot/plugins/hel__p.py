@@ -2,13 +2,13 @@ from uti.misc import paginate_modules
 from pyrogram import idle
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton , InlineQuery ,Message, CallbackQuery, InlineQueryResultPhoto
 from pyrogram import filters 
-from kingbot import kingbot ,setbot , vr,HNDLR
+from kingbot import kingbot ,setbot , vr
 from uti.serra import ser
 import re
 
 AdminSettings= [1359459092]
 
-@kingbot.on_message(filters.command("help",HNDLR) & filters.user(AdminSettings))
+@kingbot.on_message(filters.command("help",vr.get("HNDLR") & filters.user(AdminSettings))
 async def h_lp(_ , message):
   res=await kingbot.get_inline_bot_results("Devilkalund2bot", "hlpin")
   await kingbot.send_inline_bot_result(message.chat.id, res.query_id, res.results[0].id)
