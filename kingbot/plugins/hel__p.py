@@ -178,7 +178,7 @@ async def cbire(_ , cbq: CallbackQuery):
             + HELP_COMMANDS[modulee]
         )
 
-        await query.edit_message_caption(
+        await cbq.edit_message_caption(
             text=text,
             reply_markup=InlineKeyboardMarkup(
                 [
