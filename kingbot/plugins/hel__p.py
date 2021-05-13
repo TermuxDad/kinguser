@@ -2,11 +2,11 @@ from uti.misc import paginate_modules
 from pyrogram import idle
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton , InlineQuery ,Message, CallbackQuery, InlineQueryResultPhoto
 from pyrogram import filters 
-from kingbot import kingbot ,setbot , vr,Sudos
+from kingbot import kingbot ,setbot , vr,Sudos, Adminsettings
 from uti.serra import ser
 import re
 
-AdminSettings= Sudos
+
 
 @kingbot.on_message(filters.command("help",vr.get("HNDLR")) & filters.user(AdminSettings))
 async def h_lp(_ , message):
