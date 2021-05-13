@@ -164,8 +164,10 @@ async def cbire(_ , cbq: CallbackQuery):
    if mod_match:
         await kingbot.send_message("me", module)
         if module in HELP_COMMANDS:
+           await.send_message("me" , "SUCCESS")
            modulee= module
         else:
+           await kingbot.send_message("me" , "ELSE")
            return
         text = (
             "This is help for the plugins **{}**:\n".format(
