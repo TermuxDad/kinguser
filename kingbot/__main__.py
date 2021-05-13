@@ -14,6 +14,7 @@ from adminss import ALL_ADMINN
 from utilss import ALL_UTILS
 from ownerr import ALL_OWN
 from kingbot.plugins import ALL_INB
+from uti.serra import ser
 loop = asyncio.get_event_loop()
 HNDLR="."
 BOT_RUNTIME = 0
