@@ -87,54 +87,46 @@ async def cbire(_ , cbq: CallbackQuery):
                             )
       await cbq.edit_message_reply_markup(reply_markup=InlineKeyboardMarkup(keyboard))
    if cdt == "_util_h":
-      keyboard = InlineKeyboardMarkup([
-            paginate_modules(0, HELP_COMMANDU, "help"),
-            
-               [InlineKeyboardButton(
+      keyboard = paginate_modules(0, HELP_COMMANDU, "help")
+      keyboard.append([InlineKeyboardButton(
                             "Back",
                             callback_data= "b_k"
-             )],
-               [InlineKeyboardButton(
+             )])
+      keyboard.append([InlineKeyboardButton(
                             "Close",
                             callback_data= "kloz"
-             )],
-        ])
+             )])
       await cbq.edit_message_caption(
                             caption="This is the help for util commmands to make your life easy peasy",
-                            reply_markup = keyboard)
+                            reply_markup = InlineKeyboardMarkup(keyboard))
    if cdt == "_ast_h":
-      keyboard = InlineKeyboardMarkup([
-            paginate_modules(0, HELP_COMMANDAST, "help"),
-               [InlineKeyboardButton(
+      keyboard = paginate_modules(0, HELP_COMMANDAST, "help")
+      keyboard.append([InlineKeyboardButton(
                             "Back",
                             callback_data= "b_k"
-             )],
-               [InlineKeyboardButton(
+             )])
+      keyboard.append([InlineKeyboardButton(
                             "Close",
                             callback_data= "kloz"
-             )],
-        ])
+             )])
       await cbq.edit_message_caption(
                             caption="This is the help for assistant commmands to manage your userbot",
-                            reply_markup = keyboard)
+                            reply_markup = InlineKeyboardMarkup(keyboard))
    if cdt == "_own_h":
-      keyboard = InlineKeyboardMarkup([
-            paginate_modules(0, HELP_COMMANDO, "help"),
-               [InlineKeyboardButton(
+      keyboard =   paginate_modules(0, HELP_COMMANDO, "help")
+      keyboard.append([InlineKeyboardButton(
                             "Back",
                             callback_data= "b_k"
-             )],
-               [InlineKeyboardButton(
+             )])
+      keyboard.append([InlineKeyboardButton(
                             "Close",
                             callback_data= "kloz"
-             )],
-        ])
+             )])
       await cbq.edit_message_caption(
                             caption="This is the help for owner commmands ",
-                            reply_markup = keyboard)
+                            reply_markup = InlineKeyboardMarkup(keyboard))
    if cdt == "b_k":
-        keboard= InlineKeyboardMarkup(
-                    [
+        keboard=[
                         [InlineKeyboardButton(
                             "Group Admin Plugins",
                             callback_data= "_admin_h"
@@ -152,14 +144,14 @@ async def cbire(_ , cbq: CallbackQuery):
                             callback_data= "_own_h"
                         )],
                         [InlineKeyboardButton(
-                            "Back",
-                            callback_data= "b_k"
-                  )]])
+                            "Close",
+                            callback_data= "kloz"
+                  )]]
         await cbq.edit_message_caption(
                             caption=f"You are accessing help for **King Userbot** \n __Everyone is a king. Until the real king arrives.__",
-                            reply_markup = keyboard)
+                            reply_markup =InlineKeyboardMarkup(keyboard))
    if cdt == "kloz":
-         await cbq.message.delete()
+         await kingbot.delete_messages(chat_id=cbq.message.chat.id,message_ids=cbq.message.message_id)
 
 async def help_button_callback(_, __, query):
     if re.match(r"help_", query.data):
@@ -174,14 +166,18 @@ async def help_button(_, query):
     back_match = re.match(r"help_back", query.data)
     if mod_match:
         module = mod_match.group(1)
+        if module in HELP_COMMANDS:
+           modulee= module
+        else:
+           return
         text = (
             "This is help for the plugins **{}**:\n".format(
-                HELP_COMMANDS[module].__MODULE__
+                modulee
             )
-            + HELP_COMMANDS[module].__HELP__
+            + HELP_COMMANDS[modulee]
         )
 
-        await query.message.edit(
+        await query.edit_message_caption(
             text=text,
             reply_markup=InlineKeyboardMarkup(
                 [
@@ -196,11 +192,7 @@ async def help_button(_, query):
         )
 
     elif back_match:
-        await query.message.edit(
-            text=("help_str").format(", ".join(COMMAND_PREFIXES)),
-            reply_markup=InlineKeyboardMarkup(
-                paginate_modules(0, HELP_COMMANDS, "help")
-            ),
-        )
+        await kingbot.delete_messages(chat_id=cbq.message.chat.id,message_ids=cbq.message.message_id)
+
     await query.answer()
 
