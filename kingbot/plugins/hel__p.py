@@ -77,8 +77,8 @@ async def cbire(_ , cbq: CallbackQuery):
       keyboard.append([InlineKeyboardButton(
                             "Back",
                             callback_data= "b_k"
-             )],
-               [InlineKeyboardButton(
+             )])
+      keyboard.append([InlineKeyboardButton(
                             "Close",
                             callback_data= "kloz"
              )])
