@@ -207,6 +207,7 @@ async def start_bot():
                 raise Exception("Can't have two modules with the same name! Please change one")
         if hasattr(imported_module, "__HELP__") and imported_module.__HELP__:
             HELP_COMMANDO[imported_module.__MODULE__.lower()] = imported_module.__HELP__
+    await ser.getall(HELP_COMMANDS, HELP_COMMANDU, HELP_COMMANDA, HELP_COMMANDO, HELP_COMMANDAST)
     HELP_COMMANDS = {**HELP_COMMANDA,**HELP_COMMANDU,**HELP_COMMANDO, **HELP_COMMANDAST}
     await idle()
 if __name__ == '__main__':
