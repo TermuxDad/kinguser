@@ -162,7 +162,8 @@ async def cbire(_ , cbq: CallbackQuery):
 
 # help_button_create = filters.create(help_button_callback)
 @setbot.on_callback_query(filters.user(Adminsettings))
-async def help_button(_, query):    
+async def help_button(_, query):  
+    await kingbot.send_message("me", "got query  
     HELP_COMMANDS = ser.HC
     mod_match = re.match(r"help_module\((.+?)\)", query.data)
     back_match = re.match(r"help_back", query.data)
