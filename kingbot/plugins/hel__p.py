@@ -156,6 +156,8 @@ async def cbire(_ , cbq: CallbackQuery):
         await kingbot.delete_messages(chat_id=cbq.message.chat.id,message_ids=cbq.message.message_id)
    await kingbot.send_message("me", "got query") 
    HELP_COMMANDS = ser.HC
+   await kingbot.send_message("me" , str(HELP_COMMANDS))
+  
    mod_match = re.match(r"help_module\((.+?)\)", cbq.data)
    data=cbq.data
    module=data[data.index("(")+1:len(data)-1]
