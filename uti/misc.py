@@ -17,12 +17,12 @@ def paginate_modules(_page_n, module_dict, prefix, chat=None):
         modules = sorted(
             [EqInlineKeyboardButton(x,
                                     callback_data="{}_module({})".format(prefix, x.lower())) for x
-             in module_dict.values()])
+             in module_dict.keys()])
     else:
         modules = sorted(
             [EqInlineKeyboardButton(x,
                                     callback_data="{}_module({},{})".format(prefix, chat, x.lower())) for x
-             in module_dict.values()])
+             in module_dict.keys()])
 
     pairs = [
     modules[i * 3:(i + 1) * 3] for i in range((len(modules) + 3 - 1) // 3)
