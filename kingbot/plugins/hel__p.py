@@ -179,7 +179,7 @@ async def cbire(_ , cbq: CallbackQuery):
         )
 
         await cbq.edit_message_caption(
-            text=text,
+            caption=text,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
