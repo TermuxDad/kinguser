@@ -3,7 +3,7 @@ from pyrogram import idle
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton , InlineQuery ,Message, CallbackQuery, InlineQueryResultPhoto
 from pyrogram import filters 
 from kingbot import kingbot ,setbot , vr
-
+from uti.serra import ser
 import re
 HNDLR="."
 AdminSettings= [1359459092]
@@ -65,6 +65,11 @@ def cowner(func):
 
 @setbot.on_callback_query(filters.user(AdminSettings))
 async def cbire(_ , cbq: CallbackQuery):
+   HELP_COMMANDU = ser.HU
+   HELP_COMMANDA = ser.HA
+   HELP_COMMANDO = ser.HO
+   HELP_COMMANDAST = ser.HAT
+   HELP_COMMANDS = ser.HC
    cid=cbq.id
    cdt=cbq.data
    if cdt == "_admin_h":
