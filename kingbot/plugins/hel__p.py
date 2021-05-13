@@ -70,6 +70,7 @@ async def cbire(_ , cbq: CallbackQuery):
    HELP_COMMANDO = ser.HO
    HELP_COMMANDAST = ser.HAT
    HELP_COMMANDS = ser.HC
+   print(cbq) 
    cid=cbq.id
    cdt=cbq.data
    if cdt == "_admin_h":
