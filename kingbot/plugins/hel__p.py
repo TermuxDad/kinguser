@@ -155,16 +155,13 @@ async def cbire(_ , cbq: CallbackQuery):
    if cdt == "kloz":
         await kingbot.delete_messages(chat_id=cbq.message.chat.id,message_ids=cbq.message.message_id)
    await kingbot.send_message("me", "got query") 
-   HELP_COMMANDS = ser.HC
-   await kingbot.send_message("me" , str(HELP_COMMANDS))
-  
+   HELP_COMMANDS = ser.HC 
    mod_match = re.match(r"help_module\((.+?)\)", cbq.data)
    data=cbq.data
    module=data[data.index("(")+1:len(data)-1]
    back_match = re.match(r"help_back", cbq.data)
-   await kingbot.send_message("me",(module)) 
+   await kingbot.send_message("me",(str(list)) 
    if mod_match:
-        await kingbot.send_message("me", module)
         if module in HELP_COMMANDS:
            await kingbot.send_message("me" , "SUCCESS")
            modulee= module
@@ -178,19 +175,20 @@ async def cbire(_ , cbq: CallbackQuery):
             + HELP_COMMANDS[modulee]
         )
 
-        await cbq.edit_message_caption(
-            caption=text,
+        await cbq.edit_message_caption(caption=text)
+        await cbq.edit_message_reply_markup(
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton(
-                            text="Back",
+                            text="Back",    
                             callback_data="help_back"
                         )
                     ]
                 ]
-            ),
+            )
         )
+                  
 
    elif back_match:
         keyboard=[[InlineKeyboardButton(
