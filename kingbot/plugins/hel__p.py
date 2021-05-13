@@ -5,7 +5,7 @@ from pyrogram import filters
 from kingbot import kingbot ,setbot , vr,Adminsettings
 from uti.serra import ser
 import re
-Admins= AdminSettings
+Admins= Adminsettings
 @kingbot.on_message(filters.command("help",vr.get("HNDLR")) & filters.user(Adminsettings))
 async def h_lp(_ , message):
   res=await kingbot.get_inline_bot_results("Devilkalund2bot", "hlpin")
@@ -61,7 +61,7 @@ def cowner(func):
                     show_alert=True)
         return wrapper
 
-@setbot.on_callback_query(filters.user(AdminSettings))
+@setbot.on_callback_query(filters.user(Adminsettings))
 async def cbire(_ , cbq: CallbackQuery):
    HELP_COMMANDU = ser.HU
    HELP_COMMANDA = ser.HA
@@ -161,7 +161,7 @@ async def cbire(_ , cbq: CallbackQuery):
 
 
 # help_button_create = filters.create(help_button_callback)
-@setbot.on_callback_query(help_button_create)
+@setbot.on_callback_query(filters.user(Adminsettings))
 async def help_button(_, query):    
     HELP_COMMANDS = ser.HC
     mod_match = re.match(r"help_module\((.+?)\)", query.data)
