@@ -10,7 +10,7 @@ __**This command helps you to instantly promote someone in the chat**__
 -> `promote`
 """
 
-@kingbot.on_message(filters.group & filters.command("promote",vr.get("HNDLR") & filters.user(Adminsettings)))  
+@kingbot.on_message(filters.group & filters.command("promote",vr.get("HNDLR")) & filters.user(Adminsettings))  
 async def promotte(_, message):
     msg_id=message.message_id
     user_id=message.reply_to_message.from_user.id
