@@ -157,12 +157,12 @@ async def cbire(_ , cbq: CallbackQuery):
    if cdt == "kloz":
          await kingbot.delete_messages(chat_id=cbq.message.chat.id,message_ids=cbq.message.message_id)
 
-async def help_button_callback(_, __, query):
-    if re.match(r"help_", query.data):
-        return True
+# async def help_button_callback(_, __, query):
+#     if re.match(r"help_", query.data):
+#         return True
 
 
-help_button_create = filters.create(help_button_callback)
+# help_button_create = filters.create(help_button_callback)
 @setbot.on_callback_query(help_button_create)
 async def help_button(_, query):    
     HELP_COMMANDS = ser.HC
