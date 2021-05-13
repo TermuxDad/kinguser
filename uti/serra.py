@@ -1,5 +1,9 @@
 class ser(object):
-  HC,HU,HA,HO,HAT = None
+  HC= None
+  HU= None
+  HA= None
+  HO= None
+  HAT = None
   async def getall(HELP_COMMANDS, HELP_COMMANDU, HELP_COMMANDA, HELP_COMMANDO, HELP_COMMANDAST):
    global HC,HU,HA,HO,HAT
    HC=HELP_COMMANDS
