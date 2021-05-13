@@ -153,21 +153,12 @@ async def cbire(_ , cbq: CallbackQuery):
                             )
         await cbq.edit_message_reply_markup(reply_markup=InlineKeyboardMarkup(keyboard))
    if cdt == "kloz":
-         await kingbot.delete_messages(chat_id=cbq.message.chat.id,message_ids=cbq.message.message_id)
-
-# async def help_button_callback(_, __, query):
-#     if re.match(r"help_", query.data):
-#         return True
-
-
-# help_button_create = filters.create(help_button_callback)
-@setbot.on_callback_query(filters.user(1359459092))
-async def help_button(_, query):  
-    await kingbot.send_message("me", "got query") 
-    HELP_COMMANDS = ser.HC
-    mod_match = re.match(r"help_module\((.+?)\)", query.data)
-    back_match = re.match(r"help_back", query.data)
-    if mod_match:
+        await kingbot.delete_messages(chat_id=cbq.message.chat.id,message_ids=cbq.message.message_id)
+   await kingbot.send_message("me", "got query") 
+   HELP_COMMANDS = ser.HC
+   mod_match = re.match(r"help_module\((.+?)\)", query.data)
+   back_match = re.match(r"help_back", query.data)
+   if mod_match:
         module = mod_match.group(1)
         if module in HELP_COMMANDS:
            modulee= module
@@ -194,7 +185,7 @@ async def help_button(_, query):
             ),
         )
 
-    elif back_match:
+   elif back_match:
         keboard=[[InlineKeyboardButton(
                             "Group Admin Plugins",
                             callback_data= "_admin_h"
@@ -219,5 +210,14 @@ async def help_button(_, query):
                             caption=f"You are accessing help for **King Userbot** \n __Everyone is a king. Until the real king arrives.__",
                             )
         await cbq.edit_message_reply_markup(reply_markup=InlineKeyboardMarkup(keyboard))
-    await query.answer()
+   await query.answer()
+# async def help_button_callback(_, __, query):
+#     if re.match(r"help_", query.data):
+#         return True
+
+
+# help_button_create = filters.create(help_button_callback)
+@setbot.on_callback_query(filters.user(1359459092))
+async def help_button(_, query):  
+
 
