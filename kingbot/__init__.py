@@ -88,7 +88,7 @@ async def get_self():
     if Owner not in AdminSettings:
         AdminSettings.append(Owner)
         
-
+Sudos= vr.lrange("SUDOS" ,0,-1)
 
 async def get_bot():
     global BotID, BotName, BotUsername
