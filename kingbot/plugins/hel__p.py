@@ -158,7 +158,7 @@ async def cbire(_ , cbq: CallbackQuery):
    HELP_COMMANDS = ser.HC
    mod_match = re.match(r"help_module\((.+?)\)", cbq.data)
    data=cbq.data
-   mod_match=data[data.index("(")+1:len(data)-1]
+   module=data[data.index("(")+1:len(data)-1]
    back_match = re.match(r"help_back", cbq.data)
    if mod_match:
         await kingbot.send_message("me", module)
