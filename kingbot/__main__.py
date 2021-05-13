@@ -140,7 +140,7 @@ async def reinitial():
 async def start_bot():
     global BOT_RUNTIME, HELP_COMMANDS, HELP_COMMANDU, HELP_COMMANDA, HELP_COMMANDO, HELP_COMMANDAST
     # sys.excepthook = except_hook
-    vr.set("Owne", Var.Owner_ID)
+    vr.set("Owne", Var.OWNER_ID)
     print("----- Checking user and bot... -----")
     await reinitial()
     print("----------- Check done! ------------")
