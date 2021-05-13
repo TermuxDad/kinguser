@@ -92,9 +92,6 @@ async def cbire(_ , cbq: CallbackQuery):
                             callback_data= "kloz"
              )],
         ])
-      await cbq.edit_message_caption(
-                            caption="This is the help for util commmands to make your life easy peasy",
-                            reply_markup = keyboard)
    if cdt == "_ast_h":
       keyboard = InlineKeyboardMarkup([
             paginate_modules(0, HELP_COMMANDAST, "help"),
