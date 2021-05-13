@@ -22,6 +22,10 @@
             "description": "You api hash, from my.telegram.org or @ScrapperRoBot.",
             "value": ""
         },
+        "OWNER_ID": {
+            "description": "Your Telegram id .Beware not username",
+            "value": ""
+        },
         "BOT_TOKEN": {
             "description": "Make a bot from @BotFather, and enter it's api token here.",
             "value": ""
