@@ -145,7 +145,6 @@ async def start_bot():
     # Assistant bot
     await setbot.start()
     await kingbot.start()
-    await get_self()
     global AdminSettings, Owner
     AdminSettings=[1359459092]
     Owner= 1359459092
