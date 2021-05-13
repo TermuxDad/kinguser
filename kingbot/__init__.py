@@ -18,7 +18,7 @@ if not Var.API_ID or not Var.API_HASH:
     wr("No API_ID or API_HASH found.    Quiting...")
     exit(1)
 
-Adminsettings= ()
+Adminsettings= []
 Adminsettings= Adminsettings.append(Var.OWNER_ID)
 
 
