@@ -18,7 +18,8 @@ if not Var.API_ID or not Var.API_HASH:
     wr("No API_ID or API_HASH found.    Quiting...")
     exit(1)
 
-Adminsettings= None
+Adminsettings= {}
+Adminsettings= Adminsettings.append(Var.OWNER_ID)
 
 
 START_TIME = datetime.now()
@@ -73,8 +74,9 @@ async def get_bot_inline(bot):
 
 
 async def get_self():
-    global Owner, OwnerName, OwnerUsername, AdminSettings
+    global Owner, OwnerName, OwnerUsername
     getself = await kingbot.get_me()
+    Adminsettings={}
     Owner = getself.id
     vr.set("SUDOS" , Owner)
     if getself.last_name:
