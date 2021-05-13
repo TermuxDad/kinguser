@@ -14,11 +14,7 @@ class Var(object):
     DB_URI = config("DATABASE_URI", default=None)
     LOG_CHANNEL = config("LOG_CHANNEL", default=None, cast=int)
     BLACKLIST_CHAT = set(int(x) for x in config("BLACKLIST_CHAT", "").split())
-    try:
-        OWNER_ID = config("OWNER_ID", default=None, cast=int)
-    except BaseException:
-        pass
-    # heroku stuff
+    OWNER_ID = config("OWNER_ID", default=None, cast=int)
     try:
         HEROKU_APP_NAME = config("HEROKU_APP_NAME", default=None)
         HEROKU_API = config("HEROKU_API", default=None)
