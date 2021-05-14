@@ -8,7 +8,7 @@ from pyrogram import idle
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton , InlineQuery ,Message, CallbackQuery, InlineQueryResultPhoto
 from pyrogram import filters 
 # import kingbot
-from kingbot import kingbot ,setbot , get_bot , get_self, vr ,Adminsettings
+from kingbot import kingbot ,setbot , get_bot , get_self, vr ,Adminsettings, vcbot
 from assistant import ALL_AST
 from adminss import ALL_ADMINN
 from utilss import ALL_UTILS
@@ -209,7 +209,8 @@ async def start_bot():
                 raise Exception("Can't have two modules with the same name! Please change one")
         if hasattr(imported_module, "__HELP__") and imported_module.__HELP__:
             HELP_COMMANDO[imported_module.__MODULE__.lower()] = imported_module.__HELP__
-    
+    if vcbot is not None:
+         rni= vcbot.run
     ser.HU=HELP_COMMANDU
     ser.HA=HELP_COMMANDA
     ser.HO=HELP_COMMANDO
