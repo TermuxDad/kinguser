@@ -160,8 +160,8 @@ async def cbire(_ , cbq: CallbackQuery):
    data=cbq.data
    module=data[data.index("(")+1:len(data)-1]
    back_match = re.match(r"help_back", cbq.data)
-   await kingbot.send_message("me",(str(list)) 
-   if(mod_match):
+   await kingbot.send_message("me",(str(Admins)))
+   if mod_match:
         if module in HELP_COMMANDS:
            await kingbot.send_message("me" , "SUCCESS")
            modulee= module
