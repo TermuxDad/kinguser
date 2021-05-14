@@ -28,7 +28,7 @@ def purge(_, message):
             reply_msg_id=message.reply_to_message.message_id
             current_msg_id=message.message_id
             for msg_id in range(reply_msg_id , current_msg_id ,1):
-                    client.delete_messages(chat_id , msg_id)
+                    kingbot.delete_messages(chat_id , msg_id)
             message.reply("All messages purged , no hint left !")
     else:
         message.reply("Shall I delete your existence ?😌")
