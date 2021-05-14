@@ -16,12 +16,12 @@ async def varistr(_, message):
         content=msg_txt[msg_txt.index(" ")+1:len(msg_txt)]
         keyy= content.split(" ", 1)[0]
         valuee = content.split(" ",1)[1]
-        if keyy = "VC_SESSION":
+        if keyy == "VC_SESSION":
              if vr.get("VC_API_ID") is None & vr.get("VC_API_HASH") is None:
                      message.edit_text("First set `VC_API_HASH` and `VC_API_ID` to use music. Then set the VC_SESSION")
                      return
              else:
                      pass
-        if keyy= "VC_API_ID":
+        if keyy== "VC_API_ID":
               keyy = int(keyy)
         vr.set(keyy , valuee)
