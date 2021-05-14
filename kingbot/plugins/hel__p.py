@@ -85,6 +85,7 @@ async def cbire(_ , cbq: CallbackQuery):
                             caption=f"This is the help for admin commmands to manage your group efficiently",
                             )
       await cbq.edit_message_reply_markup(reply_markup=InlineKeyboardMarkup(keyboard))
+      return
    if cdt == "_util_h":
       keyboard = paginate_modules(0, HELP_COMMANDU, "help")
       keyboard.append([InlineKeyboardButton(
@@ -99,6 +100,7 @@ async def cbire(_ , cbq: CallbackQuery):
                             caption="This is the help for util commmands to make your life easy peasy",
                             )
       await cbq.edit_message_reply_markup(reply_markup=InlineKeyboardMarkup(keyboard))
+      return
    if cdt == "_ast_h":
       keyboard = paginate_modules(0, HELP_COMMANDAST, "help")
       keyboard.append([InlineKeyboardButton(
@@ -113,6 +115,7 @@ async def cbire(_ , cbq: CallbackQuery):
                             caption="This is the help for assistant commmands to manage your userbot",
                             )
       await cbq.edit_message_reply_markup(reply_markup=InlineKeyboardMarkup(keyboard))
+      return
    if cdt == "_own_h":
       keyboard =   paginate_modules(0, HELP_COMMANDO, "help")
       keyboard.append([InlineKeyboardButton(
@@ -127,6 +130,7 @@ async def cbire(_ , cbq: CallbackQuery):
                             caption="This is the help for owner commmands ",
                             )
       await cbq.edit_message_reply_markup(reply_markup=InlineKeyboardMarkup(keyboard))
+      return
    if cdt == "b_k":
         keyboard=[[InlineKeyboardButton(
                             "Group Admin Plugins",
@@ -152,9 +156,9 @@ async def cbire(_ , cbq: CallbackQuery):
                             caption=f"You are accessing help for **King Userbot** \n __Everyone is a king. Until the real king arrives.__",
                             )
         await cbq.edit_message_reply_markup(reply_markup=InlineKeyboardMarkup(keyboard))
+        return
    if cdt == "kloz":
-        await kingbot.delete_messages(chat_id=cbq.message.chat.id,message_ids=cbq.message.message_id)
-   await kingbot.send_message("me", "got query") 
+        await kingbot.delete_messages(chat_id=cbq.message.chat.id,message_ids=cbq.message.message_id) 
    HELP_COMMANDS = ser.HC 
    mod_match = re.match(r"help_module\((.+?)\)", cbq.data)
    data=cbq.data
