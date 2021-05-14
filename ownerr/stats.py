@@ -1,6 +1,8 @@
 from datetime import datetime
 from kingbot import kingbot, setbot , vr, Adminsettings
-__MODULE__ = "Voice Chat Player"
+from pyrogram import filters
+from pyrogram.types import Messages
+__MODULE__ = "Stats"
 __HELP__="""
 `stats` gives you your current stats i.e. Your group , channel , adminship and bot count
 """
