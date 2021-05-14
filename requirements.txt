@@ -11,7 +11,7 @@ certifi==2020.6.20
 chardet==3.0.4
 chucknorris==2.8
 youtube_dl
-youtubesearchpython
+youtube-search-python
 google==3.0.0
 google-search==1.1.1
 googlesearch-python==2020.0.2
