@@ -14,4 +14,4 @@ __**This command helps you get a joke in the chat**__
 
 @kingbot.on_message(filters.command("joke",vr.get("HNDLR")) & filters.user(Adminsettings))  
 async def joke(_, message):
-    await message.reply(generate())
+    await message.edit_text(generate())
