@@ -10,7 +10,14 @@ from typing import List, Dict, Union,Callable, Coroutine
 from kingbot import vcbot, setbot , Adminsettings
 from youtubesearchpython import VideosSearch
 __MODULE__ = "Voice Chat Player"
-The commands and there use is explained here-: \n `/play` Reply this in response to a link or any telegram audio file it will be played \n `/skip` to skip current song \n `/stop` or `/kill` to stop the streaming of song \n `/pause` to pause the stream \n `/resume` to resume the playback. \n Inline search is also supported.
+__HELP__="""
+The commands and there use is explained here-: 
+ `/play` Reply this in response to a link or any telegram audio file it will be played 
+ `/skip` to skip current song
+ `/stop` or `/kill` to stop the streaming of song 
+ `/pause` to pause the stream 
+ `/resume` to resume the playback. 
+ Inline search is also supported.
 """
 queues: Dict[int, Queue] = {}
 
