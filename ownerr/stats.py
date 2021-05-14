@@ -1,8 +1,11 @@
 from datetime import datetime
 from kingbot import kingbot, setbot , vr, Adminsettings
-
-@kingbot.on_message(filters.command("help",".")  & filters.user(Adminsettings))
-async def stats(client, message):
+__MODULE__ = "Voice Chat Player"
+__HELP__="""
+`stats` gives you your current stats i.e. Your group , channel , adminship and bot count
+"""
+@kingbot.on_message(filters.command("help",vr.get("HNDLR"))  & filters.user(Adminsettings))
+async def stats(_, message):
     message.edit_text("Collecting stats")
     start = datetime.now()
     u = 0
@@ -12,7 +15,7 @@ async def stats(client, message):
     b = 0
     a_chat = 0
     group = ["supergroup", "group"]
-    async for dialog in client.iter_dialogs():
+    async for dialog in kingbot.iter_dialogs():
         if dialog.chat.type == "private":
             u += 1
         elif dialog.chat.type == "bot":
