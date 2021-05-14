@@ -7,12 +7,12 @@ from uti.serra import ser
 import re
 Admins= Adminsettings
 Msge={}
-@kingbot.on_message(filters.command("help",".") & filters.user(1359459092))
+@kingbot.on_message(filters.command("help",".") & filters.user(Adminsettings))
 async def h_lp(_ , message):
   booet= await setbot.get_me()
   res=await kingbot.get_inline_bot_results(booet.username, "hlpin")
   mg= await kingbot.send_inline_bot_result(message.chat.id, res.query_id, res.results[0].id)
-@setbot.on_inline_query(filters.regex("hlpin"))
+@setbot.on_inline_query(filters.regex("hlpin") & filters.user(Adminsettings))
 async def in_h_lp(_ , inline_query):
   keboard= InlineKeyboardMarkup(
                   [  [
@@ -63,7 +63,7 @@ def cowner(func):
                     show_alert=True)
         return wrapper
 
-@setbot.on_callback_query(filters.user(1359459092))
+@setbot.on_callback_query(filters.user(Adminsettings))
 async def cbire(_ , cbq: CallbackQuery):
    HELP_COMMANDU = ser.HU
    HELP_COMMANDA = ser.HA
