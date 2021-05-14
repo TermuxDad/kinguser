@@ -29,3 +29,15 @@ async def paste(_,message):
                 await message.reply("Can only paste text LOL !")
         else:
             await message.reply("Give me something to paste !")    
+     if not msg_txt:
+        if not message.reply_to_message:
+            await message.edit_text("`Reply To File / Give Me Text To Paste!`")
+            return
+        if not message.reply_to_message.text:
+            file = await message.reply_to_message.download()
+            m_list = open(file, "r").read()
+            content = m_list
+            os.remove(file)
+            req = requests.post('https://nekobin.com./api/documents',json={"content":content})
+            key = json.loads(req.content)["result"]["key"]
+            await message.reply(f"Nekofied to https://nekobin.com/{key}")
