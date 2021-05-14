@@ -18,7 +18,7 @@ def pin_message(_, message):
         kingbot.edit_message_text(chat_id , msg_id , "Shall I pin your head to wall ?")
     else:
         if message.chat.type == "private":
-            client.pin_chat_message(chat_id , msg_id , both_sides=True)
+            kingbot.pin_chat_message(chat_id , msg_id , both_sides=True)
             kingbot.edit_message_text(chat_id , msg_id , "Done the Job master !")
         else:
             can_pin=kingbot.get_chat_member(chat_id , "me").can_pin_messages
@@ -26,5 +26,5 @@ def pin_message(_, message):
                 kingbot.edit_message_text(chat_id , msg_id , "Not a admin bruh 🥱") 
             else:         
                 reply_msg_id=message.reply_to_message.message_id
-                client.pin_chat_message(chat_id , reply_msg_id)
+                kingbot.pin_chat_message(chat_id , reply_msg_id)
                 kingbot.edit_message_text(chat_id , msg_id , "Done the Job master !")
