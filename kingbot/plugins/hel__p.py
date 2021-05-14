@@ -17,7 +17,7 @@ async def in_h_lp(_ , inline_query):
   keboard= InlineKeyboardMarkup(
                   [  [
                         InlineKeyboardButton(
-                            "Group Admin Plugins",
+                            "Group Commands",
                             callback_data= "_admin_h"
                         )
                     ],
@@ -27,13 +27,13 @@ async def in_h_lp(_ , inline_query):
                             callback_data= "_util_h"
                         ),
                         InlineKeyboardButton(
-                            "ASSISTANT Plugins",
+                            "ASSISTANT Manager",
                             callback_data= "_ast_h"
                         )
                     ],
                     [
                         InlineKeyboardButton(
-                            "OWNER Plugins",
+                            "OWNER Tools",
                             callback_data= "_own_h"
                         )
                     ],
@@ -45,7 +45,7 @@ async def in_h_lp(_ , inline_query):
   await inline_query.answer(
         results=[
             InlineQueryResultPhoto(
-                photo_url= "https://telegra.ph/file/7b7141557ddf084e0afe6.jpg",
+                photo_url= "https://telegra.ph/file/040062841c541079a538c.jpg",
                 title="Help",
                 caption=f"You are accessing help for **King Userbot** \n __Everyone is a king. Until the real king arrives.__",
                 reply_markup=keboard,
@@ -135,7 +135,7 @@ async def cbire(_ , cbq: CallbackQuery):
       return
    if cdt == "b_k":
         keyboard=[[InlineKeyboardButton(
-                            "Group Admin Plugins",
+                            "Group Commands",
                             callback_data= "_admin_h"
                         )],
                         [InlineKeyboardButton(
@@ -143,11 +143,11 @@ async def cbire(_ , cbq: CallbackQuery):
                             callback_data= "_util_h"
                         ),
                         InlineKeyboardButton(
-                            "ASSISTANT Plugins",
+                            "ASSISTANT Manager",
                             callback_data= "_ast_h"
                         )],
                         [InlineKeyboardButton(
-                            "OWNER Plugins",
+                            "OWNER Tools",
                             callback_data= "_own_h"
                         )],
                         [InlineKeyboardButton(
@@ -195,7 +195,7 @@ async def cbire(_ , cbq: CallbackQuery):
 
    elif back_match:
         keyboard=[[InlineKeyboardButton(
-                            "Group Admin Plugins",
+                            "Group Commands",
                             callback_data= "_admin_h"
                         )],
                         [InlineKeyboardButton(
@@ -203,11 +203,11 @@ async def cbire(_ , cbq: CallbackQuery):
                             callback_data= "_util_h"
                         ),
                         InlineKeyboardButton(
-                            "ASSISTANT Plugins",
+                            "ASSISTANT Manager",
                             callback_data= "_ast_h"
                         )],
                         [InlineKeyboardButton(
-                            "OWNER Plugins",
+                            "OWNER Tools",
                             callback_data= "_own_h"
                         )],
                         [InlineKeyboardButton(
