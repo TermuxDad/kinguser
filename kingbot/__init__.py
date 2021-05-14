@@ -13,7 +13,8 @@ from sqlalchemy.orm import sessionmaker, scoped_session
 from redis import ConnectionError, ResponseError, StrictRedis
 from uti.confi import Var
 LOGS = getLogger(__name__)
-
+from pytgcalls.pytgcalls import PyTgCalls
+starttimer=datetime.now()
 if not Var.API_ID or not Var.API_HASH:
     wr("No API_ID or API_HASH found.    Quiting...")
     exit(1)
