@@ -16,4 +16,4 @@ async def id(_, message):
         await message.reply(f"This chat's ID is: {message.chat.id}")
     else:
         test = f"This scumbag's ID is: {message.reply_to_message.from_user.id}\n\nThis chat's ID is: {message.chat.id}"
-        await message.reply(test)
+        await message.edit_text(test)
