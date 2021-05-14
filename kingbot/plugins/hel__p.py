@@ -159,7 +159,7 @@ async def cbire(_ , cbq: CallbackQuery):
    mod_match = re.match(r"help_module\((.+?)\)", cbq.data)
    data=cbq.data
    module=data[data.index("(")+1:len(data)-1]
-   back_match = re.match(r"help_back", cbq.data)
+   back_match = re.match(r"b_k", cbq.data)
    await kingbot.send_message("me",(str(Admins)))
    if mod_match:
         if module in HELP_COMMANDS:
@@ -182,7 +182,7 @@ async def cbire(_ , cbq: CallbackQuery):
                     [
                         InlineKeyboardButton(
                             text="Back",    
-                            callback_data="help_back"
+                            callback_data="b_k"
                         )
                     ]
                 ]
