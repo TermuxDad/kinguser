@@ -9,8 +9,8 @@ Admins= Adminsettings
 Msge={}
 @kingbot.on_message(filters.command("help",".") & filters.user(1359459092))
 async def h_lp(_ , message):
-  Boot= setbot.get_me()
-  res=await kingbot.get_inline_bot_results(Boot.username, "hlpin")
+  booet= await setbot.get_me()
+  res=await kingbot.get_inline_bot_results(booet.username, "hlpin")
   mg= await kingbot.send_inline_bot_result(message.chat.id, res.query_id, res.results[0].id)
   await kingbot.send_message("me", f"{mg.id} + {mg.chat.id}")
 @setbot.on_inline_query(filters.regex("hlpin"))
