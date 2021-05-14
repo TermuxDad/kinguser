@@ -6,10 +6,12 @@ from kingbot import kingbot ,setbot , vr,Adminsettings
 from uti.serra import ser
 import re
 Admins= Adminsettings
+Msge={}
 @kingbot.on_message(filters.command("help",".") & filters.user(1359459092))
 async def h_lp(_ , message):
   res=await kingbot.get_inline_bot_results("Devilkalund2bot", "hlpin")
-  await kingbot.send_inline_bot_result(message.chat.id, res.query_id, res.results[0].id)
+  mg= await kingbot.send_inline_bot_result(message.chat.id, res.query_id, res.results[0].id)
+  await kingbot.send_message("me", f"{mg.id} + {mg.chat.id}"
 @setbot.on_inline_query(filters.regex("hlpin"))
 async def in_h_lp(_ , inline_query):
   keboard= InlineKeyboardMarkup(
