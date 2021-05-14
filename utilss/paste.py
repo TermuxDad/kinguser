@@ -12,7 +12,8 @@ __**This command helps you to paste a text to nekobin.com and return a shareable
 
 @kingbot.on_message(filters.command("paste",vr.get("HNDLR")) & filters.user(Adminsettings))  
 async def paste(_,message):
-    msg_txt=message.text
+   msg_txt=message.text
+   if msg_txt:
     if " " in msg_txt:
         content=msg_txt[msg_txt.index(" ")+1:len(msg_txt)]
         req = requests.post('https://nekobin.com./api/documents',json={"content":content})
@@ -29,7 +30,7 @@ async def paste(_,message):
                 await message.reply("Can only paste text LOL !")
         else:
             await message.reply("Give me something to paste !")    
-     if not msg_txt:
+   if not msg_txt:
         if not message.reply_to_message:
             await message.edit_text("`Reply To File / Give Me Text To Paste!`")
             return
